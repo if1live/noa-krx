@@ -29,7 +29,7 @@ export const fetch_webio = async (data: Record<string, string | number>) => {
 export const fetch_range = async (
   input: Record<string, string | number>,
   startDate: MyDate,
-  endDate: MyDate
+  endDate: MyDate,
 ) => {
   let list: Array<Record<string, string>> = [];
 
@@ -59,7 +59,7 @@ export const fetch_range = async (
         cursorStartDate,
         cursorEndDate,
       },
-      "fetch_range"
+      "fetch_range",
     );
     const data = json as {
       output: Record<string, string>[];

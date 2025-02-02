@@ -1,8 +1,10 @@
 import { fetch_webio } from "./fetcher.js";
+import { MyDateMod } from "./mod.js";
 import * as parser from "./parser.js";
+import type { MyDate } from "./types.js";
 
 export interface Input {
-  trdDd: string;
+  date: MyDate;
 }
 
 export interface Element {
@@ -29,9 +31,17 @@ export interface Element {
 
 const bld = "dbms/MDC/STAT/standard/MDCSTAT04301";
 
+/**
+ * [13101] 전종목 시세
+ * 통계 - 기본 통계 - 증권상품 - ETF - 전종목 시세
+ *
+ * 주말 및 공휴일에는 ETF 목록은 나오지만 숫자 필드는 죄다 '-'
+ * 미래를 선택하면 빈배열 리턴
+ */
 export const load = async (input: Input): Promise<Element[]> => {
   const params = {
     ...input,
+    trdDd: MyDateMod.marshal(input.date, ""),
     bld,
   };
 
