@@ -78,7 +78,7 @@ export const fetch_range = async (
     // 대기 시간은 고정하고 싶지 않아서
     if (remain > 0) {
       if (data.output.length > 0) {
-        const millis = Math.random() * 500 + 500;
+        const millis = Math.random() * 500 + 200;
         await setTimeout(millis);
       } else {
         // 검색 결과 없을때의 대기시간은 짧게 해도 되지 않을까?
