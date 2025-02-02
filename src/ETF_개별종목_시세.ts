@@ -46,9 +46,17 @@ export const load = async (input: Input): Promise<Element[]> => {
   const output = await fetch_range(params, startDate, endDate);
   const elements = output.map((x): Element => {
     // ETF 개별종목 시세에서 대비는 항상 양수로 나오는 문제가 있다! 등락률의 부호를 갖다쓴다.
+    // 기초지수에서도 똑같은 문제가 있어서 양쪽다 막아야한다
     const 등락률 = parser.prepareDecimal("FLUC_RT")(x);
     const 대비abs = Math.abs(parser.prepareDecimal("CMPPREVDD_PRC")(x));
     const 대비 = 등락률 < 0 ? -대비abs : 대비abs;
+
+    const 기초지수_등락률 = parser.prepareDecimal("IDX_FLUC_RT")(x);
+    const 기초지수_대비abs = Math.abs(
+      parser.prepareDecimal("CMPPREVDD_IDX")(x)
+    );
+    const 기초지수_대비 =
+      기초지수_등락률 < 0 ? -기초지수_대비abs : 기초지수_대비abs;
 
     return {
       일자: parser.prepareDate("TRD_DD")(x),
@@ -66,8 +74,8 @@ export const load = async (input: Input): Promise<Element[]> => {
       상장좌수: parser.prepareDecimal("LIST_SHRS")(x),
       기초지수_지수명: parser.prepareString("IDX_IND_NM")(x),
       기초지수_종가: parser.prepareDecimal("OBJ_STKPRC_IDX")(x),
-      기초지수_대비: parser.prepareDecimal("CMPPREVDD_IDX")(x),
-      기초지수_등락률: parser.prepareDecimal("IDX_FLUC_RT")(x),
+      기초지수_대비,
+      기초지수_등락률,
     };
   });
 

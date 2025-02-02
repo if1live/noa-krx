@@ -6,7 +6,9 @@
     "useIgnoreFile": true
   },
   "files": {
-    "ignore": ["biome.json"]
+    "ignore": [
+      "biome.json"
+    ]
   },
   "formatter": {
     "enabled": true,

@@ -1,20 +1,14 @@
 import fs from "node:fs/promises";
+import os from "node:os";
 import path from "node:path";
 import { setTimeout } from "node:timers/promises";
 import { assert } from "@toss/assert";
 import { program } from "commander";
-import { type Options, stringify } from "csv-stringify/sync";
 import { z } from "zod";
+import { stringifyCSV, writeCSV } from "./src/helpers.js";
 import { api } from "./src/index.js";
 import { logger } from "./src/instances.js";
 import type { MyDate } from "./src/types.js";
-
-const options: Options = {
-  header: true,
-  cast: {
-    number: (value) => (Number.isNaN(value) ? "" : value.toString()),
-  },
-};
 
 const Input = z.object({
   dataDir: z.string(),
@@ -41,9 +35,9 @@ const main = async (input: Input) => {
   logger.info(`ETF: 전종목 count=${rows.length}`);
   await setTimeout(500);
 
-  const text = stringify(rows, options);
+  const text = stringifyCSV(rows);
   const fp = path.resolve(dataDir, "전종목_기본정보.csv");
-  await fs.writeFile(fp, text);
+  await writeCSV(fp, text);
 
   await fetchInitial(input, rows);
   await insertNewDate(input);
@@ -76,8 +70,8 @@ const fetchInitial = async (
       logger.info(`${label}: ${row.한글종목약명} ticker=${row.단축코드} fetch`);
       await setTimeout(500);
 
-      const text = stringify(elements, options);
-      await fs.writeFile(fp, text);
+      const text = stringifyCSV(elements);
+      await writeCSV(fp, text);
     }
   }
 };
@@ -86,7 +80,7 @@ const fetchInitial = async (
 const insertNewDate = async (input: Input) => {
   const dataDir = input.dataDir;
 
-  const date = "2025-02-01";
+  const date = "2025-01-31";
   const list = await api.ETF_전종목_시세.load({ date });
   if (list.length === 0) {
     logger.warn(`ETF: 전종목 count=0 date=${date}`);
@@ -97,11 +91,11 @@ const insertNewDate = async (input: Input) => {
     return;
   }
 
-  const text = stringify(list, options);
+  const text = stringifyCSV(list);
 
   const filename = createDateFileName(date);
   const fp = path.resolve(dataDir, "전종목", filename);
-  await fs.writeFile(fp, text);
+  await writeCSV(fp, text);
 
   // 개별종목별로 데이터 추가하기
   for (const [idx, row] of list.entries()) {
@@ -140,8 +134,8 @@ const insertNewDate = async (input: Input) => {
       .join(",");
 
     const nextLines = [line_header, nextLine, ...lines_content];
-    const nextText = nextLines.join("\n");
-    await fs.writeFile(fp, nextText);
+    const nextText = nextLines.join(os.EOL);
+    await writeCSV(fp, nextText);
     logger.info(`${label}: ${row.종목명} ticker=${row.단축코드} insert`);
   }
 };
