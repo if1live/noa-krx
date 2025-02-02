@@ -120,18 +120,19 @@ const insertNewDate = async (input: Input) => {
     const [line_header, ...lines_content] = lines;
     const headers = line_header.split(",");
 
-    // csv로 바꿔서 끼워넣기. 좀 무식하지만 csv 규격 안바꾼다면 문제 없음
-    const nextRow: api.ETF_개별종목_시세.Element = {
+    // 기초지수명같은곳에 ","가 들어가면서 무식한 csv 변환에서 함정 밟을수 있음
+    // 안전을 위해서 csv 라이브러리를 거치도록 수정
+    const nextElement: api.ETF_개별종목_시세.Element = {
       ...row,
       일자: date,
     };
-    const nextLine = headers
-      .map((header) => {
-        const value = (nextRow as unknown as Record<string, string>)[header];
-        assert(value !== undefined);
-        return value;
-      })
-      .join(",");
+    const nextEntries = headers.map((header) => {
+      const value = (nextElement as unknown as Record<string, string>)[header];
+      assert(value !== undefined);
+      return [header, value] as const;
+    });
+    const nextRow = Object.fromEntries(nextEntries);
+    const nextLine = stringifyCSV([nextRow]).split("\n")[1];
 
     const nextLines = [line_header, nextLine, ...lines_content];
     const nextText = nextLines.join(os.EOL);

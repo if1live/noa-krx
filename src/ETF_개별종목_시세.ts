@@ -45,24 +45,24 @@ export const load = async (input: Input): Promise<Element[]> => {
 
   const output = await fetch_range(params, startDate, endDate);
   const elements = output.map((x): Element => {
-    // ETF 개별종목 시세에서 대비는 항상 양수로 나오는 문제가 있다! 등락률의 부호를 갖다쓴다.
-    // 기초지수에서도 똑같은 문제가 있어서 양쪽다 막아야한다
-    const 등락률 = parser.prepareDecimal("FLUC_RT")(x);
+    // ETF 개별종목 시세에서 대비는 항상 양수로 나오는 문제가 있다
+    // 2025-01-31 430500 "KIWOOM 물가채KIS"는 등락률이 0인데 대비는 -5가 나오야한다.
+    // 종가가 114950나 되다보니까 정밀도 문제로 등락률에서 보이지 않는것.
+    // 부호로 추정되는 항목에서 값을 얻어다 쓴다
     const 대비abs = Math.abs(parser.prepareDecimal("CMPPREVDD_PRC")(x));
-    const 대비 = 등락률 < 0 ? -대비abs : 대비abs;
+    const 대비 = 대비abs * parser.prepareSign("FLUC_TP_CD")(x);
 
-    const 기초지수_등락률 = parser.prepareDecimal("IDX_FLUC_RT")(x);
     const 기초지수_대비abs = Math.abs(
-      parser.prepareDecimal("CMPPREVDD_IDX")(x)
+      parser.prepareDecimal("CMPPREVDD_IDX")(x),
     );
     const 기초지수_대비 =
-      기초지수_등락률 < 0 ? -기초지수_대비abs : 기초지수_대비abs;
+      기초지수_대비abs * parser.prepareSign("FLUC_TP_CD1")(x);
 
     return {
       일자: parser.prepareDate("TRD_DD")(x),
       종가: parser.prepareDecimal("TDD_CLSPRC")(x),
       대비,
-      등락률,
+      등락률: parser.prepareDecimal("FLUC_RT")(x),
       순자산가치: parser.prepareDecimal("LST_NAV")(x),
       시가: parser.prepareDecimal("TDD_OPNPRC")(x),
       고가: parser.prepareDecimal("TDD_HGPRC")(x),
@@ -75,7 +75,7 @@ export const load = async (input: Input): Promise<Element[]> => {
       기초지수_지수명: parser.prepareString("IDX_IND_NM")(x),
       기초지수_종가: parser.prepareDecimal("OBJ_STKPRC_IDX")(x),
       기초지수_대비,
-      기초지수_등락률,
+      기초지수_등락률: parser.prepareDecimal("IDX_FLUC_RT")(x),
     };
   });
 
