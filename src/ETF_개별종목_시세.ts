@@ -45,11 +45,16 @@ export const load = async (input: Input): Promise<Element[]> => {
 
   const output = await fetch_range(params, startDate, endDate);
   const elements = output.map((x): Element => {
+    // ETF 개별종목 시세에서 대비는 항상 양수로 나오는 문제가 있다! 등락률의 부호를 갖다쓴다.
+    const 등락률 = parser.prepareDecimal("FLUC_RT")(x);
+    const 대비abs = Math.abs(parser.prepareDecimal("CMPPREVDD_PRC")(x));
+    const 대비 = 등락률 < 0 ? -대비abs : 대비abs;
+
     return {
       일자: parser.prepareDate("TRD_DD")(x),
       종가: parser.prepareDecimal("TDD_CLSPRC")(x),
-      대비: parser.prepareDecimal("CMPPREVDD_PRC")(x),
-      등락률: parser.prepareDecimal("FLUC_RT")(x),
+      대비,
+      등락률,
       순자산가치: parser.prepareDecimal("LST_NAV")(x),
       시가: parser.prepareDecimal("TDD_OPNPRC")(x),
       고가: parser.prepareDecimal("TDD_HGPRC")(x),
