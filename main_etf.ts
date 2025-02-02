@@ -3,16 +3,23 @@ import path from "node:path";
 import { setTimeout } from "node:timers/promises";
 import { assert } from "@toss/assert";
 import { program } from "commander";
-import { stringify } from "csv-stringify/sync";
+import { type Options, stringify } from "csv-stringify/sync";
 import { z } from "zod";
 import { api } from "./src/index.js";
 import { logger } from "./src/instances.js";
 import type { MyDate } from "./src/types.js";
 
-const input = z.object({
+const options: Options = {
+  header: true,
+  cast: {
+    number: (value) => (Number.isNaN(value) ? "" : value.toString()),
+  },
+};
+
+const Input = z.object({
   dataDir: z.string(),
 });
-type Input = z.infer<typeof input>;
+type Input = z.infer<typeof Input>;
 
 program.requiredOption("--data-dir", "data directory", "data_ETF");
 
@@ -34,7 +41,7 @@ const main = async (input: Input) => {
   logger.info(`ETF: 전종목 count=${rows.length}`);
   await setTimeout(500);
 
-  const text = stringify(rows, { header: true });
+  const text = stringify(rows, options);
   const fp = path.resolve(dataDir, "전종목_기본정보.csv");
   await fs.writeFile(fp, text);
 
@@ -69,7 +76,7 @@ const fetchInitial = async (
       logger.info(`${label}: ${row.한글종목약명} ticker=${row.단축코드} fetch`);
       await setTimeout(500);
 
-      const text = stringify(elements, { header: true });
+      const text = stringify(elements, options);
       await fs.writeFile(fp, text);
     }
   }
@@ -90,14 +97,18 @@ const insertNewDate = async (input: Input) => {
     return;
   }
 
-  const text = stringify(list, { header: true });
+  const text = stringify(list, options);
 
   const filename = createDateFileName(date);
   const fp = path.resolve(dataDir, "전종목", filename);
   await fs.writeFile(fp, text);
 
   // 개별종목별로 데이터 추가하기
-  for (const row of list) {
+  for (const [idx, row] of list.entries()) {
+    const curr = idx + 1;
+    const total = list.length;
+    const label = `ETF ${curr}/${total}`;
+
     const filename = createProductFileName({
       단축코드: row.단축코드,
       한글종목약명: row.종목명,
@@ -110,7 +121,8 @@ const insertNewDate = async (input: Input) => {
       continue;
     }
 
-    const lines = text.split("\n");
+    // \r\n 방지용으로 trim
+    const lines = text.split("\n").map((x) => x.trim());
     const [line_header, ...lines_content] = lines;
     const headers = line_header.split(",");
 
@@ -127,12 +139,14 @@ const insertNewDate = async (input: Input) => {
       })
       .join(",");
 
-    const nextLines = [line_header, nextLine, ...lines_content, ""];
+    const nextLines = [line_header, nextLine, ...lines_content];
     const nextText = nextLines.join("\n");
     await fs.writeFile(fp, nextText);
+    logger.info(`${label}: ${row.종목명} ticker=${row.단축코드} insert`);
   }
 };
 
 program.parse();
-const options = input.parse(program.opts());
-await main(options);
+
+const input = Input.parse(program.opts());
+await main(input);
