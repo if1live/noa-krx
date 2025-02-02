@@ -54,7 +54,7 @@ export const fetch_range = async (
     const json = await fetch_webio(params);
     logger.info(
       {
-        ticker: input.isuCd,
+        isin: input.isuCd,
         bld: input.bld,
         cursorStartDate,
         cursorEndDate,
@@ -67,6 +67,8 @@ export const fetch_range = async (
     };
 
     // 검색결과는 최신 데이터가 위로 배치된다
+    // CSV로 작성시 맨뒤에 한줄씩 붙이면 되니까 시간 오름차순이 성능상 유리하지만
+    // 관심있는 정보는 맨뒤에 아니라 맨 앞이 일반적이다.
     list = [...data.output, ...list];
 
     // 다음 루프 준비

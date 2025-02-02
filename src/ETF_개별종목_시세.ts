@@ -3,7 +3,7 @@ import * as parser from "./parser.js";
 import type { MyDate } from "./types.js";
 
 export interface Input {
-  isuCd: string;
+  isin: string;
   startDate: MyDate;
   endDate: MyDate;
 }
@@ -39,6 +39,7 @@ export const load = async (input: Input): Promise<Element[]> => {
 
   const params = {
     ...rest,
+    isuCd: input.isin,
     bld,
   };
 
