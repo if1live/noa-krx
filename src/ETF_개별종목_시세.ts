@@ -1,14 +1,15 @@
-import { fetch_webio } from "./fetcher.js";
+import { fetch_range } from "./fetcher.js";
 import * as parser from "./parser.js";
+import type { MyDate } from "./types.js";
 
 export interface Input {
   isuCd: string;
-  strtDd: string;
-  endDd: string;
+  startDate: MyDate;
+  endDate: MyDate;
 }
 
 export interface Element {
-  일자: string;
+  일자: MyDate;
   종가: number;
   대비: number;
   등락률: number;
@@ -33,22 +34,18 @@ const bld = "dbms/MDC/STAT/standard/MDCSTAT04501";
  * [13103] 개별종목 시세 추이
  * 통계 - 기본 통계 - 증권상품 - ETF - 개별종목 시세 추이
  */
-export const load = async (input: Input): Promise<[Element[], string]> => {
-  // TODO: 2년 단위로 나눠서 요청
+export const load = async (input: Input): Promise<Element[]> => {
+  const { startDate, endDate, ...rest } = input;
+
   const params = {
-    ...input,
+    ...rest,
     bld,
   };
 
-  const json = await fetch_webio(params);
-  const data = json as {
-    output: Record<string, string>[];
-    CURRENT_DATETIME: string;
-  };
-
-  const elements = data.output.map((x): Element => {
+  const output = await fetch_range(params, startDate, endDate);
+  const elements = output.map((x): Element => {
     return {
-      일자: parser.prepareString("TRD_DD")(x),
+      일자: parser.prepareDate("TRD_DD")(x),
       종가: parser.prepareDecimal("TDD_CLSPRC")(x),
       대비: parser.prepareDecimal("CMPPREVDD_PRC")(x),
       등락률: parser.prepareDecimal("FLUC_RT")(x),
@@ -68,5 +65,5 @@ export const load = async (input: Input): Promise<[Element[], string]> => {
     };
   });
 
-  return [elements, data.CURRENT_DATETIME];
+  return elements;
 };

@@ -25,7 +25,7 @@ const bld = "dbms/MDC/STAT/standard/MDCSTAT00401";
  * [11004] 전체지수 기본정보
  * 통계 - 기본 통계 - 지수 - 주가지수 - 전체지수 기본정보
  */
-export const load = async (input: Input): Promise<[Array<Element>, string]> => {
+export const load = async (input: Input): Promise<Element[]> => {
   const idxIndMidclssCd = 주가지수계열.convertMidClass(input.계열구분);
   const { 계열구분: drop_계열구분, ...rest } = input;
   const params = {
@@ -55,5 +55,5 @@ export const load = async (input: Input): Promise<[Array<Element>, string]> => {
     };
   });
 
-  return [elements, data.CURRENT_DATETIME];
+  return elements;
 };

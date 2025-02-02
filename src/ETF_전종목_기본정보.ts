@@ -1,5 +1,6 @@
 import { fetch_webio } from "./fetcher.js";
 import * as parser from "./parser.js";
+import type { MyDate } from "./types.js";
 
 // biome-ignore lint/complexity/noBannedTypes: <explanation>
 export type Input = {};
@@ -10,7 +11,7 @@ export interface Element {
   한글종목명: string;
   한글종목약명: string;
   영문종목명: string;
-  상장일: string;
+  상장일: MyDate;
   기초지수명: string;
   지수산출기관: string;
   추적배수: string;
@@ -30,7 +31,7 @@ const bld = "dbms/MDC/STAT/standard/MDCSTAT04601";
  * [13104] 전종목 기본정보
  * 통계 - 기본 통계 - 증권상품 - ETF - 전종목 기본정보
  */
-export const load = async (input: Input): Promise<[Element[], string]> => {
+export const load = async (input: Input): Promise<Element[]> => {
   const params = {
     ...input,
     bld,
@@ -49,7 +50,7 @@ export const load = async (input: Input): Promise<[Element[], string]> => {
       한글종목명: parser.prepareString("ISU_NM")(x),
       한글종목약명: parser.prepareString("ISU_ABBRV")(x),
       영문종목명: parser.prepareString("ISU_ENG_NM")(x),
-      상장일: parser.prepareString("LIST_DD")(x),
+      상장일: parser.prepareDate("LIST_DD")(x),
       기초지수명: parser.prepareString("ETF_OBJ_IDX_NM")(x),
       지수산출기관: parser.prepareString("IDX_CALC_INST_NM1")(x),
       추적배수: parser.prepareString("IDX_CALC_INST_NM2")(x),
@@ -64,5 +65,5 @@ export const load = async (input: Input): Promise<[Element[], string]> => {
     };
   });
 
-  return [elements, data.CURRENT_DATETIME];
+  return elements;
 };

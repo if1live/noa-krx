@@ -29,7 +29,7 @@ export interface Element {
 
 const bld = "dbms/MDC/STAT/standard/MDCSTAT04301";
 
-export const load = async (input: Input): Promise<[Element[], string]> => {
+export const load = async (input: Input): Promise<Element[]> => {
   const params = {
     ...input,
     bld,
@@ -65,5 +65,5 @@ export const load = async (input: Input): Promise<[Element[], string]> => {
     };
   });
 
-  return [elements, data.CURRENT_DATETIME];
+  return elements;
 };

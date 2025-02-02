@@ -1,5 +1,4 @@
-import { fetch_webio } from "./fetcher.js";
-import { MyDateMod } from "./mod.js";
+import { fetch_range } from "./fetcher.js";
 import * as parser from "./parser.js";
 import type { MyDate } from "./types.js";
 
@@ -29,22 +28,15 @@ const bld = "dbms/MDC/STAT/standard/MDCSTAT00301";
  * [11003] 개별지수 시세 추이
  * 통계 - 기본 통계 - 지수 - 주가지수 - 개별지수 시세 추이
  */
-export const load = async (input: Input): Promise<[Element[], string]> => {
+export const load = async (input: Input): Promise<Element[]> => {
   const { startDate, endDate, ...rest } = input;
   const params = {
     ...rest,
-    strtDd: MyDateMod.marshal(startDate, ""),
-    endDd: MyDateMod.marshal(endDate, ""),
     bld,
   };
 
-  const json = await fetch_webio(params);
-  const data = json as {
-    output: Record<string, string>[];
-    CURRENT_DATETIME: string;
-  };
-
-  const elements = data.output.map((x): Element => {
+  const output = await fetch_range(params, startDate, endDate);
+  const elements = output.map((x): Element => {
     return {
       일자: parser.prepareDate("TRD_DD")(x),
       종가: parser.prepareDecimal("CLSPRC_IDX")(x),
@@ -59,5 +51,5 @@ export const load = async (input: Input): Promise<[Element[], string]> => {
     };
   });
 
-  return [elements, data.CURRENT_DATETIME];
+  return elements;
 };

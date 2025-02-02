@@ -30,3 +30,21 @@ export const marshal = (date: MyDate, sep: string): string => {
   const tokens = split(date);
   return tokens.join(sep);
 };
+
+export const addDay = (date: MyDate, days: number): MyDate => {
+  const [y, m, d] = split(date);
+  const dt = new Date(`${y}-${m}-${d}`);
+  dt.setDate(dt.getDate() + days);
+
+  const y0 = dt.getFullYear().toString() as MyYear;
+  const m0 = (dt.getMonth() + 1).toString().padStart(2, "0") as MyMonth;
+  const d0 = dt.getDate().toString().padStart(2, "0") as MyDayOfMonth;
+  return `${y0}-${m0}-${d0}` as MyDate;
+};
+
+export const diffDay = (date1: MyDate, date2: MyDate): number => {
+  const dt1 = new Date(date1);
+  const dt2 = new Date(date2);
+  const diff = dt2.getTime() - dt1.getTime();
+  return diff / (1000 * 60 * 60 * 24);
+};
