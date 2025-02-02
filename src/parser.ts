@@ -35,8 +35,12 @@ export const prepareSign = (key: string): SignParseFn => {
         // 상한가. "159800/마이티 코스피100" 2024/01/19 에서 발견됨. 등락률 29.99
         return 1;
       case "5":
-        // 하한하. "130680/TIGER 원유선물Enhanced(H)" 2020/03/09 에서 발견됨. 등락률 -29.98
+        // 하한가. "130680/TIGER 원유선물Enhanced(H)" 2020/03/09 에서 발견됨. 등락률 -29.98
         return -1;
+      case "":
+        // "400590/SOL 글로벌탄소배출권선물ICE(합성)" 2023/09/25 기초지수에서 발견됨
+        // 지수명은 있는데 종가, 대비, 등략률 전부 비어있다. 기초지수가 리셋되었나?
+        return 0;
       case undefined:
         throw new Error(`Cannot find key: ${key}`);
       default:
