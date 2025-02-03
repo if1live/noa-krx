@@ -2,7 +2,7 @@ import fs from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";
 import { setTimeout } from "node:timers/promises";
-import { assert } from "@toss/assert";
+import { assert, assertNonEmptyArray } from "@toss/assert";
 import { Command } from "commander";
 import { z } from "zod";
 import { stringifyCSV, writeCSV } from "./src/helpers.js";
@@ -96,7 +96,7 @@ const insertNewDate = async (input: Input) => {
     logger.warn(`ETF: 전종목 count=0 date=${date}`);
     return;
   }
-  if (Number.isNaN(list[0].시가)) {
+  if (Number.isNaN(list[0]?.시가)) {
     logger.warn(`ETF: 전종목 count=${list.length} date=${date} skip`);
     return;
   }
@@ -127,6 +127,7 @@ const insertNewDate = async (input: Input) => {
 
     // \r\n 방지용으로 trim
     const lines = text.split("\n").map((x) => x.trim());
+    assertNonEmptyArray(lines);
     const [line_header, ...lines_content] = lines;
     const headers = line_header.split(",");
 
