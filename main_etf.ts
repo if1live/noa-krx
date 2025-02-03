@@ -46,7 +46,13 @@ const main = async (input: Input) => {
   logger.info(`ETF: 전종목 count=${rows.length}`);
   await setTimeout(500);
 
-  const text = stringifyCSV(rows);
+  const text = stringifyCSV(
+    rows.map((row) => {
+      // 자주 바뀌는 필드 버리기. 요약 정보에서는 없어도 될거같아서
+      const { 상장좌수, ...rest } = row;
+      return rest;
+    }),
+  );
   const fp = path.resolve(dataDir, "전종목_기본정보.csv");
   await writeCSV(fp, text);
 
