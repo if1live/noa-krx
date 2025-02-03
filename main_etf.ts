@@ -3,19 +3,30 @@ import os from "node:os";
 import path from "node:path";
 import { setTimeout } from "node:timers/promises";
 import { assert } from "@toss/assert";
-import { program } from "commander";
+import { Command } from "commander";
 import { z } from "zod";
 import { stringifyCSV, writeCSV } from "./src/helpers.js";
 import { api } from "./src/index.js";
 import { logger } from "./src/instances.js";
 import type { MyDate } from "./src/types.js";
 
-const Input = z.object({
+export const Input = z.object({
   dataDir: z.string(),
+  date: z.custom<MyDate>((val) => {
+    const re = /^\d{4}-\d{2}-\d{2}$/;
+    return typeof val === "string" ? re.test(val) : false;
+  }),
 });
 type Input = z.infer<typeof Input>;
 
-program.requiredOption("--data-dir", "data directory", "data_ETF");
+export const program = new Command("etf");
+program
+  .requiredOption("--data-dir <dataDir>", "data directory")
+  .requiredOption("--date <date>", "date kst")
+  .action(async (opts: unknown) => {
+    const input = Input.parse(opts);
+    await main(input);
+  });
 
 const createDateFileName = (date: MyDate) => {
   return `${date}.csv`;
@@ -78,9 +89,8 @@ const fetchInitial = async (
 
 /** 특정 날짜의 전종목 데이터 얻어서 한번에 적용 */
 const insertNewDate = async (input: Input) => {
-  const dataDir = input.dataDir;
+  const { dataDir, date } = input;
 
-  const date = "2025-01-31";
   const list = await api.ETF_전종목_시세.load({ date });
   if (list.length === 0) {
     logger.warn(`ETF: 전종목 count=0 date=${date}`);
@@ -140,8 +150,3 @@ const insertNewDate = async (input: Input) => {
     logger.info(`${label}: ${row.종목명} ticker=${row.단축코드} insert`);
   }
 };
-
-program.parse();
-
-const input = Input.parse(program.opts());
-await main(input);

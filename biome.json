@@ -6,7 +6,7 @@
     "useIgnoreFile": true
   },
   "files": {
-    "ignore": ["biome.json"]
+    "ignore": ["biome.json", "tsconfig.json"]
   },
   "formatter": {
     "enabled": true,
