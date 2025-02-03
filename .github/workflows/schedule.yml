@@ -1,0 +1,66 @@
+name: schedule
+
+on:
+  schedule:
+    - cron: "0 7 * * *" # KST 16:00 = UTC 07:00
+  workflow_dispatch: # 수동 실행 가능
+
+jobs:
+  schedule:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 22
+
+      - uses: pnpm/action-setup@v2
+        id: pnpm-install
+        with:
+          version: 9.15.4
+
+      - name: Get pnpm store directory
+        id: pnpm-cache
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
+
+      - uses: actions/cache@v3
+        name: Setup pnpm cache
+        with:
+          path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      - name: Install dependencies
+        run: pnpm install --no-frozen-lockfile
+
+      - name: Checkout data branch
+        uses: actions/checkout@v4
+        with:
+          ref: data
+          path: data_branch
+
+      # https://docs.github.com/en/actions/using-workflows/workflow-commands-for-github-actions#environment-files
+      - name: date
+        run: |
+          export TZ="Etc/GMT-9"
+          echo "DATE_KST=$(date "+%Y-%m-%d")" >> $GITHUB_ENV
+
+      - name: fetch
+        run: |
+          pnpm tsx cli.ts etf --date ${DATE_KST} --data-dir ./data_branch/data_ETF
+
+      - name: commit
+        run: |
+          cd data_branch
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add *
+          git commit -m "schedule: ${DATE_KST}" || echo "No changes to commit"
+          git push origin data
