@@ -126,11 +126,6 @@ const insertNewDate = async (input: Input) => {
     const fp = path.resolve(dataDir, "개별종목", filename);
     const text = await fs.readFile(fp, "utf-8");
 
-    // 날짜 정보가 포함되어있으면 이미 처리된 데이터이므로 넘김
-    if (text.includes(date)) {
-      continue;
-    }
-
     // \r\n 방지용으로 trim
     const lines = text.split("\n").map((x) => x.trim());
     assertNonEmptyArray(lines);
@@ -149,11 +144,34 @@ const insertNewDate = async (input: Input) => {
       return [header, value] as const;
     });
     const nextRow = Object.fromEntries(nextEntries);
-    const nextLine = stringifyCSV([nextRow]).split("\n")[1];
+    const nextLine = stringifyCSV([nextRow]).split("\n")[1] ?? "";
 
-    const nextLines = [line_header, nextLine, ...lines_content];
+    // 순자산총액 정보는 하루 지연되서 올라온다. 이를 반영하려면 기존 데이터도 덮어쓰는게 좋음
+    const insertOrUpdate = text.includes(date) ? "update" : "insert";
+    const nextLines =
+      insertOrUpdate === "update"
+        ? updateLine(lines, date, nextLine)
+        : insertLine(lines, date, nextLine);
+
     const nextText = nextLines.join(os.EOL);
     await writeCSV(fp, nextText);
-    logger.info(`${label}: ${row.종목명} ticker=${row.단축코드} insert`);
+    logger.info(
+      `${label}: ${row.종목명} ticker=${row.단축코드} ${insertOrUpdate}`,
+    );
   }
+};
+
+const updateLine = (lines: string[], date: string, nextLine: string) => {
+  const [line_header, ...lines_rest] = lines;
+  const lines_content = lines_rest.map((line) => {
+    return line.includes(date) ? nextLine : line;
+  });
+  const nextLines = [line_header, ...lines_content];
+  return nextLines;
+};
+
+const insertLine = (lines: string[], date: string, nextLine: string) => {
+  const [line_header, ...lines_content] = lines;
+  const nextLines = [line_header, nextLine, ...lines_content];
+  return nextLines;
 };
