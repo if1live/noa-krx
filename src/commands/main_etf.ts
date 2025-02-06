@@ -5,10 +5,10 @@ import { setTimeout } from "node:timers/promises";
 import { assert, assertNonEmptyArray } from "@toss/assert";
 import { Command } from "commander";
 import { z } from "zod";
-import { stringifyCSV, writeCSV } from "./src/helpers.js";
-import { api } from "./src/index.js";
-import { logger } from "./src/instances.js";
-import type { MyDate } from "./src/types.js";
+import { stringifyCSV, writeCSV } from "../helpers.js";
+import { logger } from "../instances.js";
+import * as api from "../krx/index.js";
+import type { MyDate } from "../krx/types.js";
 
 export const Input = z.object({
   dataDir: z.string(),

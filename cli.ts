@@ -1,5 +1,5 @@
 import { Command } from "commander";
-import * as EntryPoint_ETF from "./main_etf.js";
+import { EntryPoint_ETF } from "./src/commands/index.js";
 
 const main = async () => {
   const program = new Command();

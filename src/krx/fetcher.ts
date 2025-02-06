@@ -1,5 +1,5 @@
 import { setTimeout } from "node:timers/promises";
-import { logger } from "./instances.js";
+import { logger } from "../instances.js";
 import { MyDateMod } from "./mod.js";
 import type { MyDate } from "./types.js";
 

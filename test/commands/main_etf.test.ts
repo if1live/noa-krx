@@ -1,6 +1,6 @@
 import { assert, describe, it } from "vitest";
-import { Input } from "../main_etf.js";
-import type { MyDate } from "../src/types.js";
+import { Input } from "../../src/commands/main_etf.js";
+import type { MyDate } from "../../src/krx/types.js";
 
 describe("main_etf#Input", () => {
   it("date: ok", () => {
