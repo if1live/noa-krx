@@ -16,6 +16,7 @@ export const Input = z.object({
   dataDir: z.string(),
   startDate: MyDateMod.schema(),
   endDate: MyDateMod.schema(),
+  overwrite: z.coerce.boolean(),
 });
 type Input = z.infer<typeof Input>;
 
@@ -27,6 +28,7 @@ program
   .requiredOption("--data-dir <dataDir>", "data directory")
   .requiredOption("--start-date <date>", "date kst", initialDate)
   .requiredOption("--end-date <date>", "date kst")
+  .option("--overwrite")
   .action(async (opts: unknown) => {
     const input = Input.parse(opts);
     await main(input);
@@ -63,89 +65,118 @@ const main = async (input: Input) => {
 
   await prepareDirectory(dataDir);
 
-  const total = MyDateMod.diffDay(startDate, endDate);
+  await fetchSummary(input);
 
+  const total = MyDateMod.diffDay(startDate, endDate);
   for (
     let cursorDate = startDate, step = 1;
     cursorDate <= endDate;
     cursorDate = MyDateMod.addDay(cursorDate, 1), step++
   ) {
     const label = `ETF ${step}/${total}`;
-    if (MyDateMod.isWeekendInKST(cursorDate)) {
-      logger.info(`${label}: date=${cursorDate} weekend`);
-      continue;
-    }
-
-    const filename = createDateFileName(cursorDate);
-
-    const parsed = MyDateMod.split(cursorDate);
-    const year: MyYear = parsed[0];
-
-    const fp_etf = path.resolve(dataDir, "전종목", year, filename);
-    const fp_index = path.resolve(dataDir, "전체지수", year, filename);
-
-    try {
-      const stat = await fs.stat(fp_etf);
-      logger.info(`${label}: date=${cursorDate} exists`);
-      // 있으면 스킵. 데이터 갱신이 필요할 수 있음
-      continue;
-    } catch (e) {
-      //
-    }
-
-    const list = await api.ETF_전종목_시세.load({ date: cursorDate });
-    await setTimeout(500);
-
-    // 데이터가 없으면 스킵. 아마도 주말이거나 공휴일
-    // 토요일, 일요일을 직접 건너뛰는것도 가능할텐데 무식하게 구현
-    if (list.length === 0) {
-      logger.info(`${label}: date=${cursorDate} count=0`);
-      continue;
-    }
-
-    if (Number.isNaN(list[0]?.시가)) {
-      logger.info(`${label}: date=${cursorDate} count=${list.length} ignore`);
-      continue;
-    }
-
-    // 전종목 데이터 저장
-    const rows = list.map((row) => {
-      const {
-        기초지수_지수명,
-        기초지수_종가,
-        기초지수_대비,
-        기초지수_등락률,
-        종목코드: _drop_종목코드,
-        ...row_etf
-      } = row;
-
-      // 기초지수를 크롤링할 마땅한곳을 못찾았다.
-      // 그래서 개별데이터에서 기초지수를 뜯어냈다.
-      const row_index = {
-        지수명: 기초지수_지수명,
-        종가: 기초지수_종가,
-        대비: 기초지수_대비,
-        등락률: 기초지수_등락률,
-      };
-
-      return [row_etf, row_index] as const;
-    });
-
-    const rows_etf = rows.map((x) => x[0]);
-    const rows_index = R.pipe(
-      rows,
-      R.map((x) => x[1]),
-      R.uniqueBy((x) => x.지수명),
-    );
-
-    const text_etf = stringifyCSV(rows_etf);
-    await writeCSV(fp_etf, text_etf);
-
-    const text_index = stringifyCSV(rows_index);
-    await writeCSV(fp_index, text_index);
-
-    logger.info(`${label}: date=${cursorDate} count=${list.length} save`);
+    await fetchDate(input, cursorDate, label);
   }
+};
+
+const fetchSummary = async (input: Input) => {
+  const dataDir = input.dataDir;
+
+  const rows = await api.ETF_전종목_기본정보.load({});
+  logger.info(`ETF: 전종목 count=${rows.length}`);
+  await setTimeout(500);
+
+  const text = stringifyCSV(
+    rows.map((row) => {
+      // 자주 바뀌는 필드 버리기. 요약 정보에서는 없어도 될거같아서
+      const { 상장좌수, ...rest } = row;
+      return rest;
+    }),
+  );
+  const fp = path.resolve(dataDir, "전종목_기본정보.csv");
+  await writeCSV(fp, text);
+};
+
+const fetchDate = async (input: Input, date: MyDate, label: string) => {
+  const { dataDir, overwrite } = input;
+
+  if (MyDateMod.isWeekendInKST(date)) {
+    logger.info(`${label}: date=${date} weekend`);
+    return;
+  }
+
+  const filename = createDateFileName(date);
+
+  const parsed = MyDateMod.split(date);
+  const year: MyYear = parsed[0];
+
+  const fp_etf = path.resolve(dataDir, "전종목", year, filename);
+  const fp_index = path.resolve(dataDir, "전체지수", year, filename);
+
+  try {
+    if (!overwrite) {
+      const stat = await fs.stat(fp_etf);
+      logger.info(`${label}: date=${date} exists`);
+      // 있으면 스킵. 데이터 갱신이 필요할 수 있음
+      return;
+    }
+  } catch (e) {
+    //
+  }
+
+  const list = await api.ETF_전종목_시세.load({ date: date });
+  await setTimeout(500);
+
+  // 데이터가 없으면 스킵. 아마도 주말이거나 공휴일
+  // 토요일, 일요일을 직접 건너뛰는것도 가능할텐데 무식하게 구현
+  if (list.length === 0) {
+    logger.info(`${label}: date=${date} count=0`);
+    return;
+  }
+
+  if (Number.isNaN(list[0]?.시가)) {
+    logger.info(`${label}: date=${date} count=${list.length} ignore`);
+    return;
+  }
+
+  // 전종목 데이터 저장
+  const rows = list.map((row) => {
+    const {
+      기초지수_지수명,
+      기초지수_종가,
+      기초지수_대비,
+      기초지수_등락률,
+      종목코드: _drop_종목코드,
+      ...row_etf
+    } = row;
+
+    // 기초지수를 크롤링할 마땅한곳을 못찾았다.
+    // 그래서 개별데이터에서 기초지수를 뜯어냈다.
+    const row_index = {
+      지수명: 기초지수_지수명,
+      종가: 기초지수_종가,
+      대비: 기초지수_대비,
+      등락률: 기초지수_등락률,
+    };
+
+    return [row_etf, row_index] as const;
+  });
+
+  const rows_etf = rows.map((x) => x[0]);
+
+  // 코스피200을 기초지수로 쓰는 ETF는 여러개 있을것이니까 중복 처리
+  const rows_index = R.pipe(
+    rows,
+    R.map((x) => x[1]),
+    R.uniqueBy((x) => x.지수명),
+  );
+
+  const text_etf = stringifyCSV(rows_etf);
+  await writeCSV(fp_etf, text_etf);
+
+  const text_index = stringifyCSV(rows_index);
+  await writeCSV(fp_index, text_index);
+
+  logger.info(`${label}: date=${date} count=${list.length} save`);
 };
 
 /*
