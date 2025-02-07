@@ -2,7 +2,11 @@ name: schedule
 
 on:
   schedule:
-    - cron: "0 7 * * *" # KST 16:00 = UTC 07:00
+    # 시간외 단일간 16:00 ~ 18:00
+    # KRX 웹은 20분 지연 정보
+    # 넉넉하게 18:30 이면 KRX 데이터 확정으로 볼수 있을듯?
+    # KST 18:30 = UTC 09:30
+    - cron: "30 9 * * *"
   workflow_dispatch: # 수동 실행 가능
 
 jobs:
