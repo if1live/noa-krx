@@ -4,6 +4,7 @@ import path from "node:path";
 import { setTimeout } from "node:timers/promises";
 import { assert, assertNonEmptyArray } from "@toss/assert";
 import { Command } from "commander";
+import * as R from "remeda";
 import { z } from "zod";
 import { stringifyCSV, writeCSV } from "../helpers.js";
 import { logger } from "../instances.js";
@@ -118,6 +119,8 @@ const main = async (input: Input) => {
         ...row_etf
       } = row;
 
+      // 기초지수를 크롤링할 마땅한곳을 못찾았다.
+      // 그래서 개별데이터에서 기초지수를 뜯어냈다.
       const row_index = {
         지수명: 기초지수_지수명,
         종가: 기초지수_종가,
@@ -125,10 +128,15 @@ const main = async (input: Input) => {
         등락률: 기초지수_등락률,
       };
 
-      return [row_etf, row_index];
+      return [row_etf, row_index] as const;
     });
+
     const rows_etf = rows.map((x) => x[0]);
-    const rows_index = rows.map((x) => x[1]);
+    const rows_index = R.pipe(
+      rows,
+      R.map((x) => x[1]),
+      R.uniqueBy((x) => x.지수명),
+    );
 
     const text_etf = stringifyCSV(rows_etf);
     await writeCSV(fp_etf, text_etf);
