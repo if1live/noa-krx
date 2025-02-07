@@ -99,6 +99,7 @@ const fetchSummary = async (input: Input) => {
 const fetchDate = async (input: Input, date: MyDate, label: string) => {
   const { dataDir, overwrite } = input;
 
+  // 주말은 KRX 안열리니까 무시. 공휴일을 알아낼 방법이 마땅히 없어서 공휴일은 그냥 요청한다
   if (MyDateMod.isWeekendInKST(date)) {
     logger.info(`${label}: date=${date} weekend`);
     return;
@@ -126,13 +127,13 @@ const fetchDate = async (input: Input, date: MyDate, label: string) => {
   const list = await api.ETF_전종목_시세.load({ date: date });
   await setTimeout(500);
 
-  // 데이터가 없으면 스킵. 아마도 주말이거나 공휴일
-  // 토요일, 일요일을 직접 건너뛰는것도 가능할텐데 무식하게 구현
+  // 미래. 예외상황 대응용
   if (list.length === 0) {
     logger.info(`${label}: date=${date} count=0`);
     return;
   }
 
+  // 공휴일이나 장이 열리지 않은 날은 레코드는 있지만 데이터가 전부 "-"
   if (Number.isNaN(list[0]?.시가)) {
     logger.info(`${label}: date=${date} count=${list.length} ignore`);
     return;
