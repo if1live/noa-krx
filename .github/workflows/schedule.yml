@@ -57,16 +57,17 @@ jobs:
           echo "TODAY_KST=$(date "+%Y-%m-%d")" >> $GITHUB_ENV
           echo "YESTERDAY_KST=$(date --date="yesterday" "+%Y-%m-%d")" >> $GITHUB_ENV
 
-      - name: fetch
-        run: |
-          pnpm tsx cli.ts etf --date ${YESTERDAY_KST} --data-dir ./data_branch/data_ETF
-          pnpm tsx cli.ts etf --date ${TODAY_KST} --data-dir ./data_branch/data_ETF
+      # TODO: 데이터 규격 정리후 살리기
+      # - name: fetch
+      #   run: |
+      #     pnpm tsx cli.ts etf --date ${YESTERDAY_KST} --data-dir ./data_branch/data_ETF
+      #     pnpm tsx cli.ts etf --date ${TODAY_KST} --data-dir ./data_branch/data_ETF
 
-      - name: commit
-        run: |
-          cd data_branch
-          git config user.name "github-actions"
-          git config user.email "github-actions@github.com"
-          git add *
-          git commit -m "schedule: ${TODAY_KST}" || echo "No changes to commit"
-          git push origin data
+      # - name: commit
+      #   run: |
+      #     cd data_branch
+      #     git config user.name "github-actions"
+      #     git config user.email "github-actions@github.com"
+      #     git add *
+      #     git commit -m "schedule: ${TODAY_KST}" || echo "No changes to commit"
+      #     git push origin data
