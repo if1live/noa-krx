@@ -1,3 +1,4 @@
+import { z } from "zod";
 import type { MyDate, MyDayOfMonth, MyMonth, MyYear } from "./types.js";
 
 const re_simple = /^(\d{4})(\d{2})(\d{2})$/;
@@ -47,4 +48,22 @@ export const diffDay = (date1: MyDate, date2: MyDate): number => {
   const dt2 = new Date(date2);
   const diff = dt2.getTime() - dt1.getTime();
   return diff / (1000 * 60 * 60 * 24);
+};
+
+export const schema = () =>
+  z.custom<MyDate>((val) => {
+    const re = /^\d{4}-\d{2}-\d{2}$/;
+    return typeof val === "string" ? re.test(val) : false;
+  });
+
+export const isWeekendInKST = (dateString: string): boolean => {
+  // 주어진 날짜를 KST (UTC+9) 기준으로 변환
+  const date = new Date(dateString);
+
+  // KST 기준으로 변환 (UTC+9 적용)
+  const kstDate = new Date(date.getTime() + 9 * 60 * 60 * 1000);
+
+  // 요일 확인 (0: 일요일, 6: 토요일)
+  const dayOfWeek = kstDate.getUTCDay();
+  return dayOfWeek === 0 || dayOfWeek === 6;
 };

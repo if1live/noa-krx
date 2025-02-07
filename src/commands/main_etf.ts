@@ -8,21 +8,24 @@ import { z } from "zod";
 import { stringifyCSV, writeCSV } from "../helpers.js";
 import { logger } from "../instances.js";
 import * as api from "../krx/index.js";
-import type { MyDate } from "../krx/types.js";
+import { MyDateMod } from "../krx/mod.js";
+import type { MyDate, MyYear } from "../krx/types.js";
 
 export const Input = z.object({
   dataDir: z.string(),
-  date: z.custom<MyDate>((val) => {
-    const re = /^\d{4}-\d{2}-\d{2}$/;
-    return typeof val === "string" ? re.test(val) : false;
-  }),
+  startDate: MyDateMod.schema(),
+  endDate: MyDateMod.schema(),
 });
 type Input = z.infer<typeof Input>;
+
+// KRX ETF의 시작점
+const initialDate: MyDate = "2002-10-14";
 
 export const program = new Command("etf");
 program
   .requiredOption("--data-dir <dataDir>", "data directory")
-  .requiredOption("--date <date>", "date kst")
+  .requiredOption("--start-date <date>", "date kst", initialDate)
+  .requiredOption("--end-date <date>", "date kst")
   .action(async (opts: unknown) => {
     const input = Input.parse(opts);
     await main(input);
@@ -32,6 +35,112 @@ const createDateFileName = (date: MyDate) => {
   return `${date}.csv`;
 };
 
+const mkdirp = async (dir: string) => {
+  try {
+    await fs.mkdir(dir, { recursive: true });
+  } catch (e) {
+    //
+  }
+};
+
+const prepareDirectory = async (dataDir: string) => {
+  // 연도별 디렉토리 미리 만들기. 뒤쪽에서 검증 안하려고
+  // 연도 구분없이 폴더 하나에 다 넣으면 파일수가 수천개가 되어버려서 분리
+  // 2002년부터 데이터 모으면 20년이상 * 365일 하면 숫자가 너무 커
+  const todayYear = new Date().getFullYear();
+  for (let year = 2002; year <= todayYear; year++) {
+    const dir_etf = path.resolve(dataDir, "전종목", String(year));
+    const dir_index = path.resolve(dataDir, "전체지수", String(year));
+
+    await mkdirp(dir_etf);
+    await mkdirp(dir_index);
+  }
+};
+
+const main = async (input: Input) => {
+  const { dataDir, startDate, endDate } = input;
+
+  await prepareDirectory(dataDir);
+
+  const total = MyDateMod.diffDay(startDate, endDate);
+
+  for (
+    let cursorDate = startDate, step = 1;
+    cursorDate <= endDate;
+    cursorDate = MyDateMod.addDay(cursorDate, 1), step++
+  ) {
+    const label = `ETF ${step}/${total}`;
+    if (MyDateMod.isWeekendInKST(cursorDate)) {
+      logger.info(`${label}: date=${cursorDate} weekend`);
+      continue;
+    }
+
+    const filename = createDateFileName(cursorDate);
+
+    const parsed = MyDateMod.split(cursorDate);
+    const year: MyYear = parsed[0];
+
+    const fp_etf = path.resolve(dataDir, "전종목", year, filename);
+    const fp_index = path.resolve(dataDir, "전체지수", year, filename);
+
+    try {
+      const stat = await fs.stat(fp_etf);
+      logger.info(`${label}: date=${cursorDate} exists`);
+      // 있으면 스킵. 데이터 갱신이 필요할 수 있음
+      continue;
+    } catch (e) {
+      //
+    }
+
+    const list = await api.ETF_전종목_시세.load({ date: cursorDate });
+    await setTimeout(500);
+
+    // 데이터가 없으면 스킵. 아마도 주말이거나 공휴일
+    // 토요일, 일요일을 직접 건너뛰는것도 가능할텐데 무식하게 구현
+    if (list.length === 0) {
+      logger.info(`${label}: date=${cursorDate} count=0`);
+      continue;
+    }
+
+    if (Number.isNaN(list[0]?.시가)) {
+      logger.info(`${label}: date=${cursorDate} count=${list.length} ignore`);
+      continue;
+    }
+
+    // 전종목 데이터 저장
+    const rows = list.map((row) => {
+      const {
+        기초지수_지수명,
+        기초지수_종가,
+        기초지수_대비,
+        기초지수_등락률,
+        종목코드: _drop_종목코드,
+        ...row_etf
+      } = row;
+
+      const row_index = {
+        지수명: 기초지수_지수명,
+        종가: 기초지수_종가,
+        대비: 기초지수_대비,
+        등락률: 기초지수_등락률,
+      };
+
+      return [row_etf, row_index];
+    });
+    const rows_etf = rows.map((x) => x[0]);
+    const rows_index = rows.map((x) => x[1]);
+
+    const text_etf = stringifyCSV(rows_etf);
+    await writeCSV(fp_etf, text_etf);
+
+    const text_index = stringifyCSV(rows_index);
+    await writeCSV(fp_index, text_index);
+
+    logger.info(`${label}: date=${cursorDate} count=${list.length} save`);
+  }
+};
+
+/*
 const createProductFileName = (row: {
   단축코드: string;
   한글종목약명: string;
@@ -60,7 +169,7 @@ const main = async (input: Input) => {
   await insertNewDate(input);
 };
 
-/** ETF 상품 시세 한번에 채우기 */
+// ETF 상품 시세 한번에 채우기
 const fetchInitial = async (
   input: Input,
   rows: api.ETF_전종목_기본정보.Element[],
@@ -93,7 +202,7 @@ const fetchInitial = async (
   }
 };
 
-/** 특정 날짜의 전종목 데이터 얻어서 한번에 적용 */
+// 특정 날짜의 전종목 데이터 얻어서 한번에 적용
 const insertNewDate = async (input: Input) => {
   const { dataDir, date } = input;
 
@@ -175,3 +284,4 @@ const insertLine = (lines: string[], date: string, nextLine: string) => {
   const nextLines = [line_header, nextLine, ...lines_content];
   return nextLines;
 };
+*/
