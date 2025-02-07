@@ -60,6 +60,7 @@ jobs:
       - name: fetch
         run: |
           pnpm tsx cli.ts etf --data-dir ./data_branch/data_ETF --start-date ${YESTERDAY_KST} --end-date ${TODAY_KST} --overwrite
+          pnpm tsx cli.ts stock --data-dir ./data_branch/data_KOSPI --start-date ${YESTERDAY_KST} --end-date ${TODAY_KST} --overwrite
 
       - name: commit
         run: |
