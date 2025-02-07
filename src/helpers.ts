@@ -1,5 +1,6 @@
 import fs from "node:fs/promises";
 import { type Options, stringify } from "csv-stringify/sync";
+import type { MyDate } from "./krx/types.js";
 
 const options: Options = {
   header: true,
@@ -15,4 +16,16 @@ export const stringifyCSV = (rows: unknown[]) => {
 export const writeCSV = async (fp: string, text: string) => {
   const BOM = "\uFEFF";
   await fs.writeFile(fp, BOM + text, "utf-8");
+};
+
+export const createDateFileName = (date: MyDate) => {
+  return `${date}.csv`;
+};
+
+export const mkdirp = async (dir: string) => {
+  try {
+    await fs.mkdir(dir, { recursive: true });
+  } catch (e) {
+    //
+  }
 };

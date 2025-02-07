@@ -6,7 +6,12 @@ import { assert, assertNonEmptyArray } from "@toss/assert";
 import { Command } from "commander";
 import * as R from "remeda";
 import { z } from "zod";
-import { stringifyCSV, writeCSV } from "../helpers.js";
+import {
+  createDateFileName,
+  mkdirp,
+  stringifyCSV,
+  writeCSV,
+} from "../helpers.js";
 import { logger } from "../instances.js";
 import * as api from "../krx/index.js";
 import { MyDateMod } from "../krx/mod.js";
@@ -33,18 +38,6 @@ program
     const input = Input.parse(opts);
     await main(input);
   });
-
-const createDateFileName = (date: MyDate) => {
-  return `${date}.csv`;
-};
-
-const mkdirp = async (dir: string) => {
-  try {
-    await fs.mkdir(dir, { recursive: true });
-  } catch (e) {
-    //
-  }
-};
 
 const prepareDirectory = async (dataDir: string) => {
   // 연도별 디렉토리 미리 만들기. 뒤쪽에서 검증 안하려고
