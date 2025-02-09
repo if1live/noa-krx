@@ -19,17 +19,20 @@ export const Input = z.object({
   startDate: MyDateMod.schema(),
   endDate: MyDateMod.schema(),
   overwrite: z.coerce.boolean(),
+  market: z.union([z.literal("kospi"), z.literal("kosdaq")]),
 });
 type Input = z.infer<typeof Input>;
 
 // 임의로 시작점 잡음. 너무 과거부터 보는건 큰 의미 없을거같아서
-const initialDate: MyDate = "2010-01-01";
+// 2008년은 범위에 넣고싶었다
+const initialDate: MyDate = "2005-01-01";
 
 export const program = new Command("stock");
 program
   .requiredOption("--data-dir <dataDir>", "data directory")
   .requiredOption("--start-date <date>", "date kst", initialDate)
   .requiredOption("--end-date <date>", "date kst")
+  .requiredOption("--market <market>", "market")
   .option("--overwrite")
   .action(async (opts: unknown) => {
     const input = Input.parse(opts);
@@ -62,13 +65,16 @@ const main = async (input: Input) => {
   }
 };
 
-// 일단 코스피만 취급
-const mktId = "STK";
+const marketTable = {
+  kospi: "STK",
+  kosdaq: "KSQ",
+} as const;
 
 // 표준코드때문에 전체 목록을 한번 읽어야한다
 const fetchSummary = async (input: Input) => {
   const dataDir = input.dataDir;
 
+  const mktId = marketTable[input.market];
   const rows = await api.주식_전종목_기본정보.load({ mktId });
   logger.info(`stock: 전종목 count=${rows.length}`);
   await setTimeout(500);
@@ -105,6 +111,7 @@ const fetchDate = async (input: Input, date: MyDate, label: string) => {
     //
   }
 
+  const mktId = marketTable[input.market];
   const list = await api.주식_전종목_시세.load({ date: date, mktId });
   await setTimeout(500);
 
