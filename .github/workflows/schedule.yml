@@ -51,15 +51,23 @@ jobs:
           path: data_branch
 
       # https://docs.github.com/en/actions/using-workflows/workflow-commands-for-github-actions#environment-files
+      # ETF 종목의 순자산총액은 다음날이 되어야 나온다. 공휴일이 끼면 날짜 어긋나니까 여유있게 긁는다.
+      # 2017년 추석 연휴는 9월 30일부터 10월 9일까지 총 10일간 휴장이었던거 참고
+      # KOSPI, KOSDAQ는 당일 데이터로도 문제 없어보임
       - name: date
         run: |
           export TZ="Etc/GMT-9"
           echo "TODAY_KST=$(date "+%Y-%m-%d")" >> $GITHUB_ENV
           echo "YESTERDAY_KST=$(date --date="yesterday" "+%Y-%m-%d")" >> $GITHUB_ENV
+          echo "START_DATE=$(date -d "14 days ago" +"%Y-%m-%d")" >> $GITHUB_ENV
+          echo "END_DATE=$(date "+%Y-%m-%d")" >> $GITHUB_ENV
 
-      - name: fetch
+      - name: ETF
         run: |
-          pnpm tsx cli.ts etf --data-dir ./data_branch/data_ETF --start-date ${YESTERDAY_KST} --end-date ${TODAY_KST} --overwrite
+          pnpm tsx cli.ts etf --data-dir ./data_branch/data_ETF --start-date ${START_DATE} --end-date ${END_DATE} --overwrite
+
+      - name: stock
+        run: |
           pnpm tsx cli.ts stock --data-dir ./data_branch/data_KOSPI --start-date ${YESTERDAY_KST} --end-date ${TODAY_KST} --overwrite --market kospi
           pnpm tsx cli.ts stock --data-dir ./data_branch/data_KOSDAQ --start-date ${YESTERDAY_KST} --end-date ${TODAY_KST} --overwrite --market kosdaq
 
