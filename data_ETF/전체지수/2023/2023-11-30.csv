@@ -1,0 +1,564 @@
+﻿지수명,종가,대비,등락률
+코스피 200,338.43,1.81,0.54
+코스피 200 TR,424.93,2.27,0.54
+KIS 크레딧 2312만기형 총수익지수,110.95,0.02,0.02
+KIS 크레딧 2412만기형 총수익지수,109.06,0.02,0.02
+KIS 크레딧 2506만기형(AA-이상)지수(총수익지수),115.34,0.01,0.01
+KIS 크레딧 2606만기형(AA-이상)지수(총수익지수),113.32,-0.03,-0.03
+FnGuide 친환경 자동차 밸류체인 지수,1575.73,16.9,1.08
+FnGuide AI 반도체 포커스 지수(시장가격),1483.97,33.29,2.29
+MSCI Korea Country ESG Leaders Custom Capped Price return Index,1532.39,10.73,0.71
+FnGuide 5G플러스 지수 (시장가격),1958.92,11.52,0.59
+FnGuide 성장소비주도 지수,1917.64,-6.9,-0.36
+FactSet US-China Electric&Autonomous Vehicle Price Return Index,227.71,-1.65,-0.72
+KRX 금현물지수,1990.67,-4.23,-0.21
+S&P GSCI GOLD Index Excess Return,139.56,-0.67,-0.48
+KIS 10년 국고채 지수 (총수익),15066.46,-63.06,-0.42
+KTB INDEX(시장가격),10330,-10.81,-0.1
+10년국채선물지수,1179.67,-6.29,-0.53
+국채선물지수,1220.83,-1.3,-0.11
+Bloomberg Global Digital Media & Tech Select Price Return Index,3224.51,-0.38,-0.01
+Solactive Global Semiconductor TOP4 Plus Price Return Index,3042.53,27.65,0.92
+Bloomberg Global Select Industry Leaders TOP10 Index(PR),3320.61,4.76,0.14
+Solactive Global Superior Income TOP 10 Price Return Index,738.64,1.42,0.19
+KIS 단기채권알파AA-이상 총수익지수,113.61,0.02,0.02
+KIS MSB 단기지수(총수익),12173.97,1.19,0.01
+MSCI Russia 25% Capped Price Return Index,,,
+MSCI MEXICO IMI 25/50 Price return Index,11088.64,248.95,2.3
+S&P Ultra T-Bond Futures Index(ER),117.21,-1.22,-1.03
+Bloomberg U.S Treasury 20+ Year Total Return Index,564.51,-6.33,-1.11
+다우존스 인터넷 종합지수,782.92,3.5,0.45
+S&P 500,4567.8,17.22,0.38
+S&P500 and Short-Term Treasury 30/70 Blend Index,167.14,0.21,0.13
+MorningStar Wide Moat Focus Index,12064.3,100.56,0.84
+NASDAQ 100,15947.87,-39.73,-0.25
+NASDAQ-100 US T-Bills 30/70 Index,1539.58,-1,-0.06
+Dow Jones U.S. Real Estate Index,0,0,0
+Solactive SOFR Daily Total Return Index,1109.83,0.16,0.01
+Bloomberg Short-Term Treasury Total Return Index,135.73,0.02,0.01
+Dow Jones U.S. Dividend 100 Price Return Index,5092.09,30.91,0.61
+Solactive US Big Tech Top 7 Plus Price Return Index,17767.57,-136.88,-0.76
+Indxx SPAC & NEXTGEN IPO Price return Index,,,
+Indxx US Green Infrastructure Price return Index,2951.21,9.98,0.34
+Markit iBoxx USD Liquid High Yield Total Return Index,322.67,-0.63,-0.19
+FnGuide-RAFI 코리아 대형 지수,8891.65,42.59,0.48
+VN30 Index(PR),1081.7,-11.46,-1.05
+Bloomberg VN30 Futures Excess Return Index,156.65,-2.34,-1.47
+MKF SAMs EW 지수,16760.34,90.82,0.54
+MKF SAMs SW,14827.07,37.08,0.25
+FnGuide 스마트 로우볼 지수,,,
+FnGuide 스마트 모멘텀 지수,,,
+FnGuide 스마트 밸류 지수,,,
+FnGuide 스마트 퀄리티 지수,,,
+FnGuide 스마트 하이베타 지수,,,
+Morningstar Singapore REIT Yield Focus Index(PR),1255.79,-6.93,-0.55
+S&P ASIA50 Price Return Index,3401.9,16.22,0.48
+Bloomberg Blended NVIDIA Equity and Korean Bond Index,5533.33,13.72,0.25
+DeepSearch 원자력테마 지수 (시장가격지수),1180.09,9.41,0.8
+MSCI Indonesia Index,7310.86,42.66,0.59
+코스피 200 선물지수,1698.8,8.01,0.47
+Nikkei 225,33486.89,165.67,0.5
+TOPIX,2374.93,10.43,0.44
+Bloomberg Japan Semiconductor Select Top 25 Index(Price Return),3034.3,37.29,1.24
+KIS 종합채권 AA-이상 총수익 지수(Total return Index),109.61,-0.24,-0.22
+FnGuide 올라운드 가치주 지수,848.71,2.2,0.26
+STAR 50 Index(Price Return),865.69,3.65,0.42
+CSI 300 Index,3496.2,7.89,0.23
+KIS 종합채권국공채1-10Y지수,143.13,-0.2,-0.14
+Hang Seng TECH Index,3899.64,-10.6,-0.27
+코스닥 150,1323.92,16.3,1.25
+코스피,2535.29,15.48,0.61
+Bloomberg EV Supporters Plus Tesla Price Return Index,5479.88,-40.4,-0.73
+FnGuide 포스코그룹포커스 지수(시장가격),4237.35,-26.25,-0.62
+MSCI Philippines IMI Index,1477.88,-7.22,-0.49
+코스피 200 동일가중지수,2102.64,13.61,0.65
+FnGuide 애플채권혼합 지수,1945.65,-3.93,-0.2
+FnGuide 한화 ESG 가치 지수,1229.88,6.08,0.5
+FnGuide 한화 ESG 성장 지수,1360.44,9.11,0.67
+WISE ESG우수기업 지수,,,
+FnGuide K-유니콘 투자기업 지수,,,
+KOFR 지수,1103.22,0.11,0.01
+KRX 300,1562.66,9.05,0.58
+FnGuide KS 로우볼 가중 TR 지수,,,
+FnGuide KS 로우사이즈 가중 TR 지수,,,
+FnGuide KS 모멘텀 가중 TR 지수,,,
+FnGuide KS 밸류 가중 TR 지수,,,
+FnGuide KS 퀄리티 가중 TR 지수,,,
+FnGuide 리츠 지수,649.1,1.01,0.16
+FnGuide K-방위산업 지수,1211.42,18.26,1.53
+S&P Global Infrastructure Index,2621.78,16.27,0.62
+Morningstar Korea Lifetime Allocation Moderate 2030 Index (Gross Return),1313.35,-0.87,-0.07
+Morningstar Korea Lifetime Allocation Moderate 2040 Index (Gross Return),1439.91,-0.06,0
+Morningstar Korea Lifetime Allocation Moderate 2050 Index (Gross Return),1845.49,2.87,0.16
+Morningstar Korea Lifetime Allocation Moderate 2060 Index (Gross Return),1882.38,4.6,0.24
+FnGuide 고배당저변동50 지수,1988.69,15.89,0.81
+FnGuide 배당주 지수,11795.89,43.68,0.37
+FnGuide 고배당 채권혼합 지수,2794.93,2.83,0.1
+KAP 국고채 10년 동일가중 지수(총수익),104.71,-0.44,-0.42
+KAP 국고채 30년 지수(총수익),84.83,-0.8,-0.93
+iSelect 글로벌HBM반도체 지수,3612.65,31.1,0.87
+MSCI ACWI Index,694.38,2.29,0.33
+BlueStar Hydrogen and NextGen Fuel Cell Index (시장가격),49.65,0.43,0.87
+BlueStar Artificial Intelligence Index(시장가격),562.3,-0.8,-0.14
+MVIS Global Rare Earth/Strategic Metals Index (Price Return),364.34,0.17,0.05
+"KAP 투자적격 크레딧 채권 1년 지수(A- 이상,총수익)",136.95,0.02,0.01
+NASDAQ 100 Technology Sector Index,8850.47,-23.8,-0.27
+Dow Jones U.S Select Dividend Index(시장가격지수),795.33,5.42,0.69
+ICE BofaAML 1-3 Year AAA-A US Corporate Index(총수익지수),528.6,-0.29,-0.05
+BlueStar Top 10 US Listed Alternative Asset Managers Index (시장가격),262.3,0.66,0.25
+ICE BofaAML 15+ Year AAA-A US Corporate Index(총수익지수),1063.03,-6.62,-0.62
+ICE U.S. Treasury 20+ Year Bond Index(Total Return),91.37,-1.08,-1.17
+iSelect 미국 Tech 10 지수,3817.5,-30.11,-0.78
+MSCI EAFE Index,2124.91,1.74,0.08
+WISE-KAP 스마트베타 Quality 채권혼합지수,1278.83,1.78,0.14
+MSCI EM Index,987.1,4.06,0.41
+SZSE ChiNext Price Index,1922.59,4.69,0.24
+KOBI HALF CREDIT Index(총수익),11625.59,0.72,0.01
+iSelect 우주항공UAM 지수,1185.53,12.05,1.03
+Solactive Japan Semiconductor Materials and Equipment Index PR,3148.06,31.25,1
+"KAP 종합채권지수(AA-이상, 총수익)",109.45,-0.25,-0.23
+FnGuide 주도업종 지수,1359.48,10.16,0.75
+FnGuide 중형주저변동50지수,2108,-0.37,-0.02
+F-코스닥150 지수,1545.4,23.08,1.52
+코스피 50,2341.29,11.19,0.48
+코스피 TR,3153.2,19.25,0.61
+FnGuide 태양광 & ESS 지수,2105.58,31.01,1.49
+KAP 24-11 회사채 총수익 지수(AA-이상),106.18,0.02,0.02
+iSelect 2차전지양극재 지수,7458.36,70.96,0.96
+iSelect 미래전략기술 지수 (PR),2294.83,23.18,1.02
+FnGuide 주주가치 지수,1791.72,10.17,0.57
+KRX ESG Leaders 150,1572.03,5.04,0.32
+코스피 200 Top 10 지수,1270.87,4.83,0.38
+KAP 32-10 국고채 10년 총수익지수,101,-0.51,-0.5
+iSelect CAPEX 설비투자 지수(시장가격),1498.97,17.01,1.15
+iSelect CD Index(총수익),11163.3,1.18,0.01
+FnGuide K-POP & 미디어 지수,800.96,-0.86,-0.11
+FnGuide K-게임 지수,842.98,-4.97,-0.59
+FnGuide K-뉴딜 디지털 플러스 지수,2048.09,9.91,0.49
+FnGuide K-메타버스 MZ 지수(시장가격),1160.56,-1.95,-0.17
+FnGuide K-반도체 지수,3023.3,57.15,1.93
+FnGuide K-푸드 지수 (시장가격),715.06,-5.14,-0.71
+FnGuide 5G 산업 지수,2077.28,25.36,1.24
+FnGuide 골프 테마 지수,625.21,3.2,0.51
+FnGuide 전기&수소차 지수 (시장가격),1932.61,9.9,0.51
+FnGuide 조선해운지수,1695.71,33.19,2
+FnGuide 친환경에너지 지수 (시장가격),1551.68,26.67,1.75
+KAP 초장기 국고채 지수(총수익),12125.24,-80.45,-0.66
+KRX 기후변화 솔루션지수,2287.38,20.7,0.91
+MSCI Korea TR Index,1442.93,7.81,0.54
+FnGuide E커머스 지수,1794.46,9.58,0.54
+FnGuide 고배당 알파 지수,1765.04,6.37,0.36
+S&P Global Luxury Index,4005.92,0.85,0.02
+Solactive Semiconductor Top 10 Index PR,3893.66,-45.31,-1.15
+MSCI World IMI Virology Select Index,1638.18,9.93,0.61
+Solactive United States Technology 100 Index(Price Return),9472.89,-35.04,-0.37
+MSCI ACWI IMI New Energy ESG Filtered (Price Return),1466.28,10.6,0.73
+MSCI ACWI IMI Water ESG Filtered (Price Return),1883.61,7.84,0.42
+ICE Global Carbon Futures Index(Excess Return),615.38,-7.95,-1.28
+FnGuide 농업융복합산업 지수(시장가격),1281.23,-2.98,-0.23
+KAP 단기 통안채 지수(총수익),13367.55,1.31,0.01
+iSelect US 메타버스 지수(시장가격),5007.15,-1.4,-0.03
+iSelect 미국 애그테크 지수 (PR),1869.15,8.14,0.44
+iSelect 원자력지수 (시장가격),1061.03,7.89,0.75
+Bloomberg Euro Treasury 50bn 25+ Year Bond Index,141.87,-1.06,-0.74
+KAP 종합채권 총수익지수(AA-이상),109.3,-0.25,-0.23
+KRX/S&P 탄소효율 그린뉴딜지수,1424.05,8.06,0.57
+S&P Korea 저변동성 지수,9362.39,-0.23,0
+KAP 종합채권 AA- 이상 지수(총수익),109.15,-0.26,-0.24
+코스피 200 정보기술,3239.83,36.72,1.15
+코스피 200 건설,315.87,3.33,1.07
+코스피 200 경기소비재,1472.67,-1.73,-0.12
+코스피 200 고배당커버드콜 ATM 지수(시장가격지수),1061.97,-4.39,-0.41
+코스피 200 금융,645.55,7.49,1.17
+코스피 200 산업재,601.29,4.47,0.75
+코스피 200 생활소비재,786.79,-1.87,-0.24
+코스피 200 에너지/화학,1393.91,7.22,0.52
+코스피 200 중공업,324.95,7.08,2.23
+코스피 200 철강/소재,899.36,7.27,0.81
+코스피 200 커뮤니케이션서비스,1770.94,1.46,0.08
+KIS 2025년 3월 만기도래 크레딧 종합채권지수(AA-이상)(시장가격),97.05,0.01,0.01
+KIS 2025년 만기도래 크레딧 종합채권 지수(AA-이상)(시장가격),108.62,0,0
+iSelect 2차전지 TOP10 지수(PR),3629.29,29.26,0.81
+iSelect 2차전지 지수 (시장가격지수),6828.14,89.82,1.33
+MKF 5대그룹주,6147.88,27.13,0.44
+iSelect AI&로봇 지수(시장가격),2757.83,68.63,2.55
+KRX ESG 사회책임경영지수(S),1769.51,4.89,0.28
+FnGuide 5G 테크 지수,1467.95,21.05,1.45
+FnGuide 수소 경제 테마 지수,1138.6,12.88,1.14
+FnGuide 창업투자회사 지수(시장가격지수),,,
+FnGuide 컨택트대표 지수(시장가격지수),666.55,2.58,0.39
+FnGuide 플랫폼테마 지수(시장가격지수),942.44,2.08,0.22
+FnGuide IT플러스 지수,2625.27,24.08,0.93
+KIS 국고채30년Enhanced지수(시장가격),6095.06,-74.45,-1.21
+KIS KP 달러채권 지수(총수익 지수),110.17,-0.01,-0.01
+FnGuide KQ고배당포커스 지수,6175.06,46.48,0.76
+KRX 300 미국달러 선물혼합지수,1653.8,8.16,0.5
+iSelect 전략적자산배분 TDF 2030 지수,1458.29,4.84,0.33
+iSelect 전략적자산배분 TDF 2040 지수,1558.68,6.2,0.4
+iSelect 전략적자산배분 TDF 2050 지수,1604.86,6.93,0.43
+FnGuide 셀렉트 밸류 지수,2800.31,9.28,0.33
+FnGuide 셀렉트벨류 채권혼합지수,1943.14,1.66,0.09
+iSelect 메타버스 지수(시장가격지수),1361.08,-2.32,-0.17
+WISE 게임 테마 지수 (시장가격지수),4476.7,-10.86,-0.24
+FnGuide 고배당포커스 지수,8554.66,30.2,0.35
+KAP 국채30년 TR 지수(총수익),84.68,-0.81,-0.95
+5년 국채선물 추종 지수,995.65,-2.33,-0.23
+S&P Global 1200 Information Technology and Interactive Media & Services(PR),2271.48,-6.38,-0.28
+MVIS Global Agribusiness Index(Price Return),2824.19,-2.21,-0.08
+Kelly Data Center & Tech Infrastructure Net Total Return Index,1364.49,6.14,0.45
+Global Metaverse Index(Price Return),,,
+Indxx Hydrogen Economy Index (Net Total Return),1849.85,8.3,0.45
+iSelect 글로벌원자력 지수(시장가격),1851.01,60.2,3.36
+Bloomberg Multi-Asset Weighted (KRW ETFs) 지수(시장가격),1444.58,-1.32,-0.09
+Bloomberg Global Equity Market Weighted Index(Price Return),1612.15,4.13,0.26
+S&P Global Clean Energy Index (Price Return),903.46,9.07,1.01
+KIS 종합채권금융채 2.5Y-3Y 지수 (총수익),127.43,-0.06,-0.05
+FnGuide 내수주플러스 지수,1044.79,0.45,0.04
+KIS 종합채권국공채3M~1.5Y지수,129.27,0.01,0.01
+KIS 단기종합채권지수(AA-이상)(총수익지수),118.26,0.02,0.02
+KIS 통안채 5개월 지수(총수익),12263.71,1.2,0.01
+WISE 대형고배당10 TR 지수,1972.43,15.19,0.78
+KIS 시가평가 MMF 지수 (총수익지수),111.51,0.02,0.02
+FnGuide 모멘텀&로우볼 지수,,,
+FnGuide 모멘텀&밸류 지수,,,
+S&P Dividend Monarchs Index(Price Return),1149.73,9.22,0.81
+S&P Oil & Gas Exploration & Production Select Industry Index(PR),5301.42,28.01,0.53
+ICE BofAML Core Plus Fixed Rate Preferred Securities Index,159.03,0.91,0.58
+Bloomberg US Corporate 1-5 Years Total Return Index,233.88,-0.21,-0.09
+KAP SOFR 지수,110.98,0.01,0.01
+미국달러선물지수,1375.74,0.86,0.06
+NYSE Semicondoctor Index(Price Return),873.6,-6,-0.68
+iSelect 미국 빅데이터Top3 채권혼합지수(Price Return),3032.45,-9.55,-0.31
+S&P U.S. Treasury Bond Futures Excess Return Index,209.85,-1.8,-0.85
+iSelect 배터리 리사이클링 지수,3320.11,59.06,1.81
+iSelect 비메모리반도체 지수(시장가격지수),3169.51,56.26,1.81
+Bloomberg Blended Samsung Group Fixed Top 3 Equity and Korean Bond Index,1743.89,-1.23,-0.07
+MKF 수출주 지수,10872.23,84.75,0.79
+MKF 우량업종대표주 지수,10279.53,93.28,0.92
+EURO STOXX 50 Index,4382.47,11.94,0.27
+KIS 종합채권 지수(A-이상)(총수익지수),114.57,-0.26,-0.23
+주식국채혼합(주식형)지수,1568.68,5.39,0.34
+MSCI China NTR Index(USD) (Net Total Return),435.43,3.43,0.79
+CSI A100,3311.36,5.06,0.15
+KOBI 크레딧 지수(총수익),14752.57,-1.68,-0.01
+FnGuide 중소형고배당포커스 지수,10890.46,27.4,0.25
+KIS 종합채권국공채4~5Y지수,137.66,-0.21,-0.15
+Hang Seng China H,5857.54,38.67,0.66
+Hang Seng China Enterprises Futures Index(Price Return),7499.67,24.31,0.33
+주식국채혼합(채권형)지수,1550.16,1.36,0.09
+S&P GSCI Palladium Excess Return Index,641.97,-13.28,-2.03
+FnGuide 헬스케어 지수,2804.77,13.75,0.49
+FnGuide 헬스케어 채권혼합 지수,1858.19,1.71,0.09
+코스피 200 중소형주지수,1191.84,13.33,1.13
+코스피 200 ESG 지수,367.3,1.79,0.49
+코스피200 정보기술 TR,3720.51,42.17,1.15
+코스피 200 초대형제외 지수,239.05,1.71,0.72
+코스피 200 가치저변동성,4863.53,18.98,0.39
+코스피200 롱 100% 코스닥150 숏 100% 선물지수,743.66,-7.77,-1.03
+코스피 200 미국채 혼합지수,2849.06,13.95,0.49
+KAP 23-12 국고채 총수익지수,103.41,0.01,0.01
+KAP 23-12 은행채 총수익지수,105.36,0.01,0.01
+KAP 24-12 은행채 총수익 지수,101.59,0.01,0.01
+KAP 25-11 회사채 총수익 지수,107.31,0.02,0.02
+FnGuide 2차전지 산업 지수,4121.74,30.43,0.74
+FnGuide 2차전지핵심소재10 지수,8091.42,52.37,0.65
+KAP 33-06 국고채 총수익 지수,103.45,-0.44,-0.42
+S&P GSCI Grains Select Index ER,22.83,0.22,0.97
+KAP 53-09 국고채 총수익 지수,98.79,-0.94,-0.94
+iSelect AI 반도체핵심장비 지수,2905.87,83.6,2.96
+KAP 양도성예금증서(CD)금리지수(총수익지수),114.97,0.01,0.01
+"KAP ESG 종합채권지수(A- 이상, 총수익)",119.63,-0.03,-0.03
+FnGuide TOP10 동일가중 지수,1184.49,3.43,0.29
+FnGuide 멀티팩터 지수,7604.69,35.09,0.46
+FnGuide 성장 지수(PR),4026.01,34.66,0.87
+FnGuide 시스템반도체 지수,2187.56,48.32,2.26
+FnGuide 웹툰&드라마 지수,623.73,-7.35,-1.16
+KRX 정보기술,1585.45,19.19,1.23
+iSelect K-로봇테마 지수,1921.87,14.36,0.75
+FnGuide K-메타버스 지수,1112.59,-6.39,-0.57
+FnGuide K-미래차 지수,1758.31,4.15,0.24
+FnGuide K-신재생에너지 플러스 지수,1719.09,14.93,0.88
+FnGuide K-이노베이션 지수,1846.95,11.25,0.61
+FnGuide K-친환경 선박 지수,1337.66,22.63,1.72
+KTOP 30,8664.11,13.2,0.15
+iEdge Emerging Markets Futures Index(ER),1075.5,2.28,0.21
+MSCI Korea ESG Universal Capped Index,1397,7.65,0.55
+MSCI Korea Index,783.96,4.24,0.54
+MSCI Korea IMI Momentum Capped,3590.47,28.86,0.81
+MSCI Korea IMI Enhanced Value Capped,6341.2,25.23,0.4
+MSCI Korea IMI Quality Capped,4892.1,29.58,0.61
+Samsung Korea Target Date 2030 Index (Price Return),1430.31,-0.8,-0.06
+Samsung Korea Target Date 2040 Index (Price Return),1550.46,0.85,0.05
+Samsung Korea Target Date 2050 Index (Price Return),1674.66,2.8,0.17
+FnGuide TRF 3070 지수,1494.49,-1.77,-0.12
+FnGuide TRF 5050 지수,1693.5,-1.06,-0.06
+FnGuide TRF 7030 지수,1901.62,-0.13,-0.01
+Tokyo Stock Exchange REIT Index,1845.45,19.99,1.1
+FnGuide TOP 5 Plus Total Return 지수,1929.74,16.24,0.85
+S&P GSCI Crude Oil Index ER,141.69,-3.54,-2.44
+ICE U.S. Treasury Inflation Linked Bond Index(Total Return),113.96,-0.39,-0.34
+Markit iBoxx USD Liquid Investment Grade Index(Total Return),299.75,-1.41,-0.47
+ICE BofAML US HY Constrained Index(Total Return),507.08,-0.3,-0.06
+KRX 건설,686.04,8.7,1.28
+FnGuide 게임 산업 지수,872.73,-5.77,-0.66
+KRX 경기소비재,951.74,-0.44,-0.05
+FnGuide 고배당 Plus 지수,14152.51,6.59,0.05
+S&P GSCI Gold Index(TR),0,0,0
+S&P GSCI North American Copper Index(TR),0,0,0
+KAP 국고채 10년 지수(TR),105.2,-0.46,-0.44
+KAP 국고채 30년 총수익 지수,87.58,-0.82,-0.93
+MKF 국고채지수(총수익),190.07,-0.15,-0.08
+ROBO Global Robotics & Automation UCITS Price Return Index,852.85,0.44,0.05
+KRX 기계장비,701.38,10.73,1.55
+Dow Jones U.S. Real Estate PR Index,326.66,2.44,0.75
+KAP 단기변동금리부은행채권지수,136.21,0.02,0.01
+KRW Cash 지수(총수익),161.65,0.02,0.01
+KRW Cash PLUS 지수(총수익),156.15,0.02,0.01
+Morningstar Multi-Asset High Income 10% Capped Index,982.09,-0.08,-0.01
+FnGuide 모멘텀 Plus 지수,3817.55,21.57,0.57
+Indxx US ETF Industry Top10 Index(Price Return),3202.25,15.2,0.48
+NYSE U.S. Big TECH 10 INDEX,8243.35,-22.25,-0.27
+S&P 500 Total Return Index,9879.02,40.2,0.41
+S&P Consumer Discretionary Select Sector Index(Price Return),1702.63,-3.47,-0.2
+S&P Financial Select Sector Index(Price Return),441.11,4.45,1.02
+S&P500 Dividend Aristocrats Covered Call(7.2% Premium) Index,113.49,1.01,0.9
+S&P Select Sector Industrial Index,0,0,0
+S&P 500 Futures Total Return Index,0,0,0
+S&P Select Sector Energy Index,883.51,5.68,0.65
+S&P Utilities Select Sector Index(Price Return),631.17,2.54,0.4
+S&P Technology Select Sector Index(Price Return),1862.43,2.32,0.12
+S&P Communication Services Select Sector Index(Price Return),364.2,-2.31,-0.63
+S&P Consumer Staples Select Sector Index(Price Return),709.89,6.25,0.89
+S&P Health Care Select Sector Index(Price Return),1324.12,16.37,1.25
+S&P Biotechnology Select Industry Index,0,0,0
+NASDAQ-100 Total Return Index,19097.15,-42.78,-0.22
+Bloomberg SOFR Daily Total Return Index,110.98,0.01,0.01
+FTSE Russell 2000 Index,1809.02,5.21,0.29
+Nasdaq CB Insights Metaverse US Index (Price Return),1014.32,-5.77,-0.57
+MVIS US Listed Semiconductor 25 Index,4813.25,-52.26,-1.07
+S&P Kensho Smart Transportation,165.71,-1.36,-0.81
+Bloomberg MSCI US Aggregate 2bn ex Securitized SRI Capped Index(Total Return),118.65,-0.34,-0.29
+S&P 10-Year U.S. Treasury Note Futures KRW(ER),210.31,-0.92,-0.44
+Nasdaq Clean Edge Green Energy Index (Price Return),477.91,-2.59,-0.54
+KRX 미디어&엔터테인먼트,1901.99,-3.51,-0.18
+FnGuide 바이오 지수,2629.41,22.87,0.88
+KRX 반도체,3664.77,72.33,2.01
+FnGuide SLV 배당가치 지수,1504.92,5.9,0.39
+코스피 배당성장 50,3405.79,1.46,0.04
+배당성장채권혼합지수,1879.41,-1.13,-0.06
+FnGuide 벨류 Plus 지수,1659.14,-2.87,-0.17
+KRX 보험,1648.07,10.02,0.61
+삼성그룹,8923.96,20.79,0.23
+WISE 삼성그룹 밸류 인덱스,8652.79,21.66,0.25
+Wise 삼성전자채권혼합 지수,1592.33,-0.31,-0.02
+MSCI World,3023.63,9.7,0.32
+Bloomberg MSCI EM Asia Investment Grade Credit SRI Index(Total Return),103.19,-0.12,-0.12
+iSelect 아시아반도체 제조동맹 지수(시장가격),3239.69,45.36,1.42
+KRX 에너지화학,3216.21,34.66,1.09
+KRX 운송,895.91,5.79,0.65
+STOXX Europe Luxury 10 Index(Price Return),3264.09,12.06,0.37
+ICE EUA Carbon Futures Index(Excess Return),1263.7,-5.97,-0.47
+S&P GSCI Silver Index(TR),0,0,0
+KRX 은행,652.82,7.08,1.1
+Nifty 50 Index,20133.15,36.55,0.18
+TOPIX100,1595.15,7.84,0.49
+KRX 자동차,1871.5,0.09,0
+"KAP 한국장기종합채권지수(AA-이상, 총수익)",280.94,-1.3,-0.46
+KAP 한국종합채권지수,247.64,-0.57,-0.23
+KRX 증권,640.95,9.23,1.46
+MSCI China all shares IMI Select Batteries Index(Price Return),1387.32,-5.66,-0.41
+FTSE China A50 Index,11756.05,64.05,0.55
+Bloomberg Greater China Media & Tech Index(Price Return),1420.59,9.84,0.7
+KRX 철강,1919.2,22.75,1.2
+KRX 최소변동성지수,6037.66,24.5,0.41
+코스닥150 롱 100% 코스피200 숏 100% 선물지수,1179.76,12.26,1.05
+코스닥 글로벌 지수,1343.53,21.03,1.59
+코스피 100,2550.57,12.63,0.5
+코스피 대형주,2520.65,14.05,0.56
+S&P GSCI Soybeans Index(TR),0,0,0
+FnGuide 퀄리티 Plus 지수,2044.49,-9.88,-0.48
+FactSet TSLA Value Chain Index(PR),361.52,-2.87,-0.79
+KRX 필수소비재,1145.42,-4.85,-0.42
+한국 대만 IT 프리미어지수,2816.37,11.37,0.41
+KRX CSI 한·중 반도체지수,2882.01,30.1,1.06
+KRX CSI 한·중 전기차지수,3622.16,-0.12,0
+KRX 헬스케어,2759.16,16.8,0.61
+FnGuide 유전자혁신기술 지수(시장가격),778.96,2.58,0.33
+FnGuide-키움 스마트 중소형주 지수,,,
+Solactive K-TechTOP10 Index(PR),2137.15,13.72,0.65
+KRX 100,5255.32,32.9,0.63
+FnGuide SK그룹대표주 지수,1084.85,12.53,1.17
+MKF 웰스 고배당20,8909.34,43.96,0.5
+MK 머니마켓 지수(총수익),13534.84,1.86,0.01
+DAX Index(PR),6416.66,19.38,0.3
+MSCI ACWI IMI 디지털 이코노미&메타버스 ESG 지수(시장가격),3468.46,6.8,0.2
+MSCI ACWI IMI 퓨처모빌리티 ESG 지수(시장가격),2119.91,-13.6,-0.64
+KIS TIPS 지수(총수익),13269.45,-31.42,-0.24
+STOXX USA ETF Industry Index (KRW),238.17,2.19,0.93
+Nasdaq US Low Volatility Dividend Achievers Index,1124.81,11.7,1.05
+MKF 블루칩,7597.29,29.41,0.39
+MSCI China A50 Connect Index,1839.4,5.59,0.3
+CSI SH-HK-SZ Consumer Top Index,1982.7,12.31,0.62
+MK 통안채지수(총수익),14048.83,-0.35,0
+KIS 2025-08만기형 크레딧 A+이상 지수(총수익),115.31,-0.01,-0.01
+iSelect 글로벌AI&로봇PR지수,3356.2,31.19,0.94
+iSelect 바이오헬스케어 PR 지수,1735,16.13,0.94
+FnGuide 스마트커머스 지수,753.3,0,0
+FnGuide TMT 지수,1763.24,10.16,0.58
+KAP 24-06 무위험채권 총수익 지수,,,
+"KAP 24-12 크레딧 채권지수(AA-이상, 총수익)",102.57,0.02,0.02
+"KAP 25-09 크레딧 채권지수(AA- 이상, 총수익)",101.41,0,0
+FnGuide 2차전지 소부장 지수(PR),5137.71,50.4,0.99
+KEDI 메가테크지수(PR),2303.1,31.53,1.39
+KIS 단기통안채 Index(총수익),11838.32,1.15,0.01
+KAP 국고채10년지수(총수익지수),105.34,-0.45,-0.43
+KAP 국고채3년지수(총수익지수),112.21,-0.1,-0.09
+KAP 미국채 20Y+ 지수(시장가격),64.87,0.09,0.14
+S&P500 ESG(PR),405.81,1.36,0.34
+Solactive US TOP5 Balanced40 Index,1651.21,-6.35,-0.38
+FnGuide AI 반도체 소부장 지수,2299.8,63.7,2.85
+S&P GSCI Carbon Emission Allowances(EUA)(EUR)ER,235.05,-4.58,-1.91
+ICE EUA Carbon Futures Custom Roll Index(Excess Return),1277.97,-6.04,-0.47
+FnGuide 의료기기소부장지수(PR),1564.47,12.15,0.78
+FnGuide 자동차TOP3플러스지수(PR),1544.99,-5.17,-0.33
+FnGuide 자동차소부장지수(PR),1296.43,-0.73,-0.06
+FnGuide 조선TOP3플러스지수(PR),1611.39,25.78,1.63
+"KAP K-종합채권지수(AA-이상, 총수익)",148.92,-0.34,-0.23
+CSI 500 지수,5545.05,-8.29,-0.15
+CSI Photovoltaic Industry Index(PR),2627.4,-20.93,-0.79
+KAP 단기자금시장지수,114.17,0.01,0.01
+S&P Global Semiconductor Korea Tilted Index(PR),5714.08,67.26,1.19
+FactSet Global Electric Vehicle and Rechargeable Battery Korea-Tilted Index(PR),260.68,-0.98,-0.37
+Dow Jones Internet Korea Tilted Index(PR),180.5,0.62,0.34
+코스피 200 헬스케어,1692.9,3.8,0.22
+코스피 200 커버드콜 5% OTM,330.11,1.23,0.37
+코스피 200 커버드콜 ATM 지수,1169.81,1.62,0.14
+KIS 국공채 2312만기형 지수(총수익지수),103.78,0.01,0.01
+KIS 회사채2404만기형 지수 (총수익지수),103.97,0.02,0.02
+KIS 회사채 2410만기형 지수(총수익지수),,,
+KIS 금융채2412만기형 지수(총수익지수),106.44,0.03,0.03
+KIS 회사채2510만기형 지수 (총수익지수),101.88,0.01,0.01
+KRX 2차전지 TOP 10 지수,5395.05,22.97,0.43
+FnGuide 2차전지소재 (Price Return) 지수,2977.54,21.79,0.74
+WISE 2차전지 테마 지수,10147.6,89.85,0.89
+iSelect AI반도체핵심공정지수,2117.14,43.54,2.1
+KRX BBIG 지수,1753.39,0.23,0.01
+KIS CD Index(총수익),11676.87,1.23,0.01
+FnGuide 메타버스테마 지수,1586.78,-3.44,-0.22
+FnGuide 반도체TOP10 지수,2662.65,68.48,2.64
+FnGuide 신재생에너지 지수,1688.44,36.77,2.23
+KEDI 혁신기업ESG30 지수(시장가격 지수),2551.92,32.84,1.3
+WISE K게임 테마 지수,644.24,-1.73,-0.27
+MKF LG그룹+ FW,7883.4,16.83,0.21
+MKF 배당귀족 지수(시장가격지수),1187.64,1.25,0.11
+MSCI Korea Country ESG Leaders Capped Index,1227,11.7,0.96
+MSCI Korea ESG Universal Index,1424.19,7.16,0.51
+S&P Global 1200 Health Care Index,4675.7,41.55,0.9
+FnGuide TOP10 지수,3944.62,25.78,0.66
+FactSet TSMC 파운드리 밸류체인 지수(시장가격지수),292.58,1.16,0.4
+KRX 게임 TOP 10 지수,674.12,-2.85,-0.42
+코스피 200 경기방어소비재,854.51,1.19,0.14
+경기방어소비재 채권혼합 지수,1362.35,-0.43,-0.03
+S&P GSCI Cash Copper Index,0,0,0
+KIS STRIP 30Y Index(총수익지수),8561.79,-123.61,-1.42
+MorningStar Exponential Technologies Index(PR),2624.34,1.67,0.06
+Indxx Global Robotics & Artificial Intelligence Thematic Index(Net Total Return),4145.68,-1.17,-0.03
+Indxx Artificial Intelligence and Big Data 지수(Net Total Return),4464.91,9.45,0.21
+Solactive Global Lithium 지수(Net Total Return),198.9,-0.02,-0.01
+INDXX 멀티에셋인컴 지수(시장가격 지수),1031.25,1.27,0.12
+Indxx Global Metaverse Index (Price Return),2495.38,-5.6,-0.22
+Indxx Cybersecurity 지수 (총수익),1850.32,-8.58,-0.46
+MorningStar Global Upstream Resources Index(PR),4057.42,-6.35,-0.16
+Solactive Autonomous & Electric Vehicles 지수(Net Total Return),1617.43,-6,-0.37
+Indxx Global Cloud Computing Index(Net Total Return),5419.88,-21.13,-0.39
+Mirae Asset Global Innovative Bluechip Top 10 Index(NTR),4022.48,-35.57,-0.88
+S&P GSCI Industrial Metals Select Index(TR),208.67,-0.57,-0.27
+S&P GSCI Precious Metals Index(TR),0,0,0
+S&P GSCI Agriculture Enhanced Index(ER),0,0,0
+Markit iBoxx USD Liquid High Yield 0-5 year 지수,76.77,-0.12,-0.16
+KIS MSB 6M PLUS 지수,12594.22,1.71,0.01
+KIS MSB 6M(총수익),12529.4,1.22,0.01
+BNY Latin America 35 ADR,2476.81,18.64,0.76
+FnGuide Low Vol 지수,11785.28,9.21,0.08
+FnGuide 리츠부동산인프라,1692.56,0.96,0.06
+KIS 리츠부동산인프라채권TR 지수,35267.21,-17.26,-0.05
+FnGuide 모멘텀 지수,24385.82,125.56,0.52
+MSCI US REIT Index,1145.53,10.26,0.9
+S&P 500 Dividend Aristocrats 지수 (Price Return),1612.24,14.61,0.91
+S&P 500 Futures Index(ER),0,0,0
+FnGuide 나스닥100 채권혼합 지수(총수익 지수),1547.57,-3.24,-0.21
+Cboe Nasdaq-100 BuyWrite V2 지수 (Total Return),882.84,-0.07,-0.01
+Nasdaq Next Generation 100 지수 (Price Return),1010.38,6.28,0.63
+NASDAQ Biotechnology 지수(시장가격지수),3874.07,56.66,1.48
+Dow Jones Industrial Average,35950.89,520.47,1.47
+KIS U.S. TREASURY BOND 0-1Y 지수(총수익),124.13,0.08,0.06
+DowJones U.S. Dividend 100 3% Premium Covered Call 지수 (TR),545.82,3.78,0.7
+DowJones U.S. Dividend 100 7% Premium Covered Call 지수 (TR),458.39,3.06,0.67
+S&P 10-Year U.S. Treasury Note Futures(ER),188.65,-0.89,-0.47
+ICE BofA Long US Treasury Principal STRIPS Index,435.49,-8.28,-1.87
+Global X U.S. Cash Flow Kings 100 Index(TR),2372.51,22.67,0.96
+Indxx US Tech Top 10 Index,4728.58,-38.29,-0.8
+iBoxx USD Liquid Investment Grade Index(Price Return),94.58,-0.46,-0.48
+PHLX Semiconductor Sector Index,3724.58,-28.78,-0.77
+WISE 미디어컨텐츠 지수,3118.39,-35.28,-1.12
+KRX 바이오 TOP 10 지수,1730.17,14.72,0.86
+KRX 방송통신,649.77,2.06,0.32
+MKF SAMs FW,14596.64,36.32,0.25
+FnGuide 소프트웨어 지수,4671.09,5.02,0.11
+iSelect 우주방산,1658.04,23.63,1.45
+WISE 여행레저 지수,1658.91,-1.29,-0.08
+FnGuide 퀄리티밸류 지수,22372.21,61.65,0.28
+코스피 우선주 지수,2790.21,-7.44,-0.27
+S&P GSCI Crude Oil Enhanced Index ER,508.79,-12.73,-2.44
+Euro STOXX Select Dividend 30,1534.23,20.35,1.34
+FnGuide 은행고배당플러스TOP10 지수(시장가격 지수),924.5,7.53,0.82
+FnGuide 의료기기 지수,1544.09,2.78,0.18
+KRX 인터넷 TOP 10 지수,886.57,-0.29,-0.03
+FactSet Japan Semiconductor Index(PR),3672.05,55.88,1.55
+엔선물지수,488.2,1,0.21
+FnGuide 중국내수테마 지수,3032,-10.79,-0.35
+KIS 국채 3-10년 지수(시장가격지수),10389.61,-26.73,-0.26
+FnGuide 증권 지수,2057.03,35.92,1.78
+FnGuide 지주회사 지수,1364.13,1.7,0.12
+Solactive China Biotech Index(Net Total Return),1690.16,20.37,1.22
+FactSet China Semiconductor 지수(Net Total Return),152.21,-0.38,-0.25
+Solactive China Electric Vehicle and Battery Index(Net Total Return),1878.47,-6.14,-0.33
+Solactive China Clean Energy 지수(Net Total Return),1649.06,-4.43,-0.27
+Hang Seng China (Hong Kong-listed) 25 Index,5898.22,45.73,0.78
+코스닥 150 정보기술,806.11,12.12,1.53
+코스닥 150 헬스케어,2573.04,18.87,0.74
+코스피 고배당 50,2760.58,5.21,0.19
+코스피 중형주,2739.02,20.48,0.75
+FnGuide 테슬라채권혼합 지수,2724.77,-13.16,-0.48
+KIS 투자등급회사채 지수(총수익),122.36,-0.03,-0.02
+FnGuide 퓨처모빌리티 지수,2496.12,9.46,0.38
+MKF 현대차그룹+ FW,29687.25,-114.89,-0.39
+WISE 화장품 지수,2318.22,-18.74,-0.8
+FnGuide K-컬처 지수,736.2,-2.43,-0.33
+Solactive Global Artificial Intelligence 지수,249.12,1.33,0.54
+FnGuide-RAFI 코리아200 지수,9188.44,44.18,0.48
+iSelect AI 지수,2049.51,42.54,2.12
+FnGuide MZ 소비 지수,838.33,0.1,0.01
+FnGuide 밸류알파지수,1720.93,27.65,1.63
+KAP 25-09 회사채 총수익 지수(AA-이상),106.89,0.02,0.02
+MK-iSelect AI ESG 지수(시장가격지수),1302.91,6.88,0.53
+KAP 단기 국공채 총수익 지수,113.7,0.01,0.01
+KAP 한국 국고채 총수익 지수,104.69,-0.44,-0.42
+S&P Aerospace & Defense Select Industry Index(PR),19745.94,334.25,1.72
+KAP 26-09 특수채 지수(총수익),106.03,-0.05,-0.05
+FnGuide 대장장이 지수(Price Return),1659.41,14.38,0.87
+FnGuide 플랫폼 지수(Price Return),1048.52,-1.16,-0.11
+코스피 200 고배당지수,2844.89,0.12,0
+KIS 2409 만기형 크레딧 종합채권 지수(AA-이상)(총수익지수),,,
+USD AA3 Above Select September 2025 Maturity Index(Total Return),108.43,-0.09,-0.08
+KIS 2609 만기형 크레딧 종합채권 지수(AA-이상)(총수익지수),105.99,-0.06,-0.06
+FnGuide CD91일 금리투자 지수(총수익),1354.06,0.15,0.01
+Dow Jones Target 2030 Index (Total Return),456.2,-0.29,-0.06
+Dow Jones Target 2040 Index (Total Return),560.33,0.8,0.14
+Dow Jones Target 2050 Index (Total Return),621.54,1.89,0.31
+KIS-키움 국고채30년 지수(총수익지수),8467.17,-79.34,-0.93
+S&P Global REIT Index,163.17,0.97,0.6
+KIS ESG 9M~1.5Y,117.01,0.02,0.02
+iSelect 리츠 지수,867.18,2.1,0.24
+MSCI USA Index(Price Return),4352.86,16.93,0.39
+KIS 종합 채권시장지수(AA-이상)(총수익지수),109.44,-0.25,-0.23
