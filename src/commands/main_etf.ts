@@ -134,12 +134,15 @@ const fetchDate = async (input: Input, date: MyDate, label: string) => {
 
   // 전종목 데이터 저장
   const rows = list.map((row) => {
+    // 순자산총액은 하루씩 밀려서 데이터가 보인다.
+    // 오늘 장마감해도 오늘 데이터는 0으로 나온다. 이전날 데이터부터 제대로 보인다.
     const {
       기초지수_지수명,
       기초지수_종가,
       기초지수_대비,
       기초지수_등락률,
       종목코드: _drop_종목코드,
+      순자산총액: _drop_순자산총액,
       ...row_etf
     } = row;
 
