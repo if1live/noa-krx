@@ -79,7 +79,13 @@ const fetchSummary = async (input: Input) => {
   logger.info(`stock: 전종목 count=${rows.length}`);
   await setTimeout(500);
 
-  const text = stringifyCSV(rows);
+  const records = rows.map((row) => {
+    // 생각보다 상장주식수가 자주 바뀐다. 매일 3~4개 종목에서 변경되네?
+    // 상장주식수는 일자별 데이터에 포함되서 버려도 유도할 수 있다.
+    const { 상장주식수: _drop_상장주식수, ...rest } = row;
+    return rest;
+  });
+  const text = stringifyCSV(records);
   const fp = path.resolve(dataDir, "전종목_기본정보.csv");
   await writeCSV(fp, text);
 };
