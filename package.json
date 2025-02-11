@@ -10,8 +10,8 @@
   "scripts": {
     "build": "tsc",
     "check:watch": "tsc --watch --noEmit",
-    "fix": "biome check --write --unsafe  .",
-    "lint": "biome check .",
+    "fix": "biome check --write --unsafe ./src ./test",
+    "lint": "biome check ./src ./test",
     "test": "vitest"
   },
   "dependencies": {
