@@ -19,6 +19,7 @@
     "@toss/assert": "^1.2.2",
     "commander": "^13.1.0",
     "csv-stringify": "^6.5.2",
+    "fast-xml-parser": "^5.0.8",
     "pino": "^9.6.0",
     "pino-pretty": "^13.0.0",
     "remeda": "^2.21.0",
