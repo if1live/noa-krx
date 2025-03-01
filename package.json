@@ -9,6 +9,7 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc",
+    "clean": "rimraf ./dist",
     "check:watch": "tsc --watch --noEmit",
     "fix": "biome check --write --unsafe ./src ./test",
     "lint": "biome check ./src ./test",
@@ -26,6 +27,7 @@
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
     "@types/node": "^22.13.8",
+    "rimraf": "^6.0.1",
     "tsx": "^4.19.3",
     "typescript": "^5.8.2",
     "unplugin-swc": "^1.5.1",
