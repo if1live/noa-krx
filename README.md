@@ -12,7 +12,7 @@ KRX data fetcher
 ## usage
 
 ```bash
-pnpm tsx cli.ts etf --date 2025-02-03 --data-dir ../noa-krx-data/data_ETF
+node cli.ts etf --date 2025-02-03 --data-dir ../noa-krx-data/data_ETF
 ```
 
 ## branch

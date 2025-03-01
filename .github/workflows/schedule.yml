@@ -20,7 +20,7 @@ jobs:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
-          node-version: 22
+          node-version: 23
 
       - uses: pnpm/action-setup@v2
         id: pnpm-install
@@ -65,12 +65,12 @@ jobs:
       # 과거를 조회하면 기초지수 수치가 조금씩 바뀔수 있다. 이를 피하려고 당일 데이터만 크롤링
       - name: ETF
         run: |
-          pnpm tsx cli.ts etf --data-dir ./data_branch/data_ETF --start-date ${TODAY_KST} --end-date ${TODAY_KST} --overwrite
+          node cli.ts etf --data-dir ./data_branch/data_ETF --start-date ${TODAY_KST} --end-date ${TODAY_KST} --overwrite
 
       - name: stock
         run: |
-          pnpm tsx cli.ts stock --data-dir ./data_branch/data_KOSPI --start-date ${YESTERDAY_KST} --end-date ${TODAY_KST} --overwrite --market kospi
-          pnpm tsx cli.ts stock --data-dir ./data_branch/data_KOSDAQ --start-date ${YESTERDAY_KST} --end-date ${TODAY_KST} --overwrite --market kosdaq
+          node cli.ts stock --data-dir ./data_branch/data_KOSPI --start-date ${YESTERDAY_KST} --end-date ${TODAY_KST} --overwrite --market kospi
+          node cli.ts stock --data-dir ./data_branch/data_KOSDAQ --start-date ${YESTERDAY_KST} --end-date ${TODAY_KST} --overwrite --market kosdaq
 
       - name: commit
         run: |
