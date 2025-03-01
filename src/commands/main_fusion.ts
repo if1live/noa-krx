@@ -99,6 +99,8 @@ const main = async (input: Input) => {
     };
   });
 
+  logger.info(`fusion: count=${records.length}`);
+
   const text = stringifyCSV(records);
   const fp = path.resolve(dataDir, "전종목_종합.csv");
   await writeCSV(fp, text);
