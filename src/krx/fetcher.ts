@@ -1,8 +1,8 @@
 import { setTimeout } from "node:timers/promises";
 import { z } from "zod";
-import { logger } from "../instances.js";
-import { MyDateMod } from "./mod.js";
-import type { MyDate } from "./types.js";
+import { logger } from "../instances.ts";
+import { MyDateMod } from "./mod.ts";
+import type { MyDate } from "./types.ts";
 
 const headers = {
   "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",

@@ -1,6 +1,6 @@
 import { assert, describe, it } from "vitest";
-import { MyDateMod } from "../../src/krx/mod.js";
-import type { MyDate } from "../../src/krx/types.js";
+import { MyDateMod } from "../../src/krx/mod.ts";
+import type { MyDate } from "../../src/krx/types.ts";
 
 describe("MyDateMod#parse", () => {
   it("20120304", () => {

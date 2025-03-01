@@ -11,11 +11,11 @@ import {
   mkdirp,
   stringifyCSV,
   writeCSV,
-} from "../helpers.js";
-import { logger } from "../instances.js";
-import * as api from "../krx/index.js";
-import { MyDateMod } from "../krx/mod.js";
-import type { MyDate, MyYear } from "../krx/types.js";
+} from "../helpers.ts";
+import { logger } from "../instances.ts";
+import * as api from "../krx/index.ts";
+import { MyDateMod } from "../krx/mod.ts";
+import type { MyDate, MyYear } from "../krx/types.ts";
 
 export const Input = z.object({
   dataDir: z.string(),

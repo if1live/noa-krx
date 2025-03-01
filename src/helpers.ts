@@ -1,6 +1,6 @@
 import fs from "node:fs/promises";
 import { type Options, stringify } from "csv-stringify/sync";
-import type { MyDate } from "./krx/types.js";
+import type { MyDate } from "./krx/types.ts";
 
 const options: Options = {
   header: true,

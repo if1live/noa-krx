@@ -1,6 +1,6 @@
-import { fetch_webio } from "./fetcher.js";
-import * as parser from "./parser.js";
-import { 주가지수계열 } from "./types.js";
+import { fetch_webio } from "./fetcher.ts";
+import * as parser from "./parser.ts";
+import { 주가지수계열 } from "./types.ts";
 
 export interface Input {
   trdDd: string;

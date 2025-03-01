@@ -1,5 +1,5 @@
 import { z } from "zod";
-import type { MyDate, MyDayOfMonth, MyMonth, MyYear } from "./types.js";
+import type { MyDate, MyDayOfMonth, MyMonth, MyYear } from "./types.ts";
 
 const re_simple = /^(\d{4})(\d{2})(\d{2})$/;
 const re_sep = /^(\d{4})[-./](\d{2})[-./](\d{2})$/;

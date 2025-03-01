@@ -1,6 +1,6 @@
-import { fetch_webio } from "./fetcher.js";
-import * as parser from "./parser.js";
-import type { MyDate } from "./types.js";
+import { fetch_webio } from "./fetcher.ts";
+import * as parser from "./parser.ts";
+import type { MyDate } from "./types.ts";
 
 // biome-ignore lint/complexity/noBannedTypes: <explanation>
 export type Input = {};

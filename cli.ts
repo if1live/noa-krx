@@ -3,7 +3,7 @@ import {
   EntryPoint_ETF,
   EntryPoint_Stock,
   EntryPoint_Kofia,
-} from "./src/commands/index.js";
+} from "./src/commands/index.ts";
 
 const main = async () => {
   const program = new Command();

@@ -1,5 +1,5 @@
-import { MyDateMod } from "./mod.js";
-import type { MyDate } from "./types.js";
+import { MyDateMod } from "./mod.ts";
+import type { MyDate } from "./types.ts";
 
 const parse_decimal = (value: string) => {
   return Number(value.replace(/,/g, ""));

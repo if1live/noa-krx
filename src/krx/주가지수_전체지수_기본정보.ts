@@ -1,6 +1,6 @@
-import { fetch_webio } from "./fetcher.js";
-import * as parser from "./parser.js";
-import { type MyDate, 주가지수계열 } from "./types.js";
+import { fetch_webio } from "./fetcher.ts";
+import * as parser from "./parser.ts";
+import { type MyDate, 주가지수계열 } from "./types.ts";
 
 export interface Input {
   계열구분: 주가지수계열;

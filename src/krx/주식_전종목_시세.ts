@@ -1,7 +1,7 @@
-import { fetch_webio } from "./fetcher.js";
-import { MyDateMod } from "./mod.js";
-import * as parser from "./parser.js";
-import type { MyDate } from "./types.js";
+import { fetch_webio } from "./fetcher.ts";
+import { MyDateMod } from "./mod.ts";
+import * as parser from "./parser.ts";
+import type { MyDate } from "./types.ts";
 
 export type Input = {
   date: MyDate;

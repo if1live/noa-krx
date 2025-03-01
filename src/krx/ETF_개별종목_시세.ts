@@ -1,6 +1,6 @@
-import { fetch_range } from "./fetcher.js";
-import * as parser from "./parser.js";
-import type { MyDate } from "./types.js";
+import { fetch_range } from "./fetcher.ts";
+import * as parser from "./parser.ts";
+import type { MyDate } from "./types.ts";
 
 export interface Input {
   isin: string;

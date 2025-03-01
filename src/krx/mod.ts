@@ -1,1 +1,1 @@
-export * as MyDateMod from "./MyDateMod.js";
+export * as MyDateMod from "./MyDateMod.ts";
