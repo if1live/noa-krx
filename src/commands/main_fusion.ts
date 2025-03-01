@@ -80,8 +80,10 @@ const main = async (input: Input) => {
       표준코드,
       단축코드,
       한글종목약명,
+      기초지수명,
       기초시장분류,
       기초자산분류,
+      과세유형,
       총보수,
     } = info;
     const { 펀드코드, TER, 매매중개수수료율 } = fee;
@@ -89,13 +91,15 @@ const main = async (input: Input) => {
     return {
       단축코드,
       한글종목약명,
+      기초지수명,
       기초시장분류,
       기초자산분류,
       총보수: 총보수.toFixed(4),
       TER: TER.toFixed(4),
       실부담비용률: 실부담비용률.toFixed(4),
-      펀드코드,
+      과세유형,
       표준코드,
+      펀드코드,
     };
   });
 
