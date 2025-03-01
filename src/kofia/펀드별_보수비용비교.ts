@@ -1,5 +1,5 @@
-import { MyDateMod } from "../krx/mod.ts";
 import { XMLParser } from "fast-xml-parser";
+import { MyDateMod } from "../krx/mod.ts";
 import type { MyDate } from "../krx/types.ts";
 
 const createPayload = (params: {
@@ -84,7 +84,11 @@ export const load = async (input: Input) => {
   const count = data.dbio_total_count_;
 
   const oneOrMany = data.selectMeta;
-  const list = Array.isArray(oneOrMany) ? oneOrMany : [oneOrMany];
+  const list = Array.isArray(oneOrMany)
+    ? oneOrMany
+    : oneOrMany
+      ? [oneOrMany]
+      : [];
 
   type Dto = {
     [key in `tmpV${number}`]: string | number;
