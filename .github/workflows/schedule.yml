@@ -67,6 +67,7 @@ jobs:
         run: |
           node cli.ts etf --data-dir ./data_branch/data_ETF --start-date ${TODAY_KST} --end-date ${TODAY_KST} --overwrite
           node cli.ts kofia --data-dir ./data_branch/data_ETF
+          node cli.ts fusion --data-dir ./data_branch/data_ETF
 
       - name: stock
         run: |
