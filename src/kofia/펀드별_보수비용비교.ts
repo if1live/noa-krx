@@ -33,7 +33,10 @@ export interface Element {
   펀드명: string;
   펀드유형: string;
   설정일: MyDate;
-  표준코드: string;
+
+  // kofia에서는 "표준코드"로 부르는데 주식의 표준코드와 다르다!
+  // 낚시방지하려고 필드 이름 바꿈
+  펀드코드: string;
 
   // 금융투자협회에서 펀드 정보에 들어가면
   // "()은 주식형 유형평균보수 비율입니다." 를 볼 수 있다.
@@ -113,7 +116,7 @@ export const load = async (input: Input) => {
     const 선취수수료 = x["tmpV13"] as number;
     const 후취수수료 = x["tmpV14"] as number;
 
-    const 표준코드 = x["tmpV15"] as string;
+    const 펀드코드 = x["tmpV15"] as string;
     const 매매중개수수료율 = x["tmpV16"] as number;
 
     return {
@@ -121,7 +124,7 @@ export const load = async (input: Input) => {
       펀드명,
       펀드유형,
       설정일,
-      표준코드,
+      펀드코드,
       운용보수,
       판매보수,
       수탁보수,
