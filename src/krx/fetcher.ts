@@ -1,4 +1,5 @@
 import { setTimeout } from "node:timers/promises";
+import { z } from "zod";
 import { logger } from "../instances.js";
 import { MyDateMod } from "./mod.js";
 import type { MyDate } from "./types.js";
@@ -39,6 +40,12 @@ export const fetch_range = async (
   let remain = MyDateMod.diffDay(startDate, endDate);
   let cursorStartDate = startDate;
 
+  const schema = z.object({
+    isuCd: z.any(),
+    bld: z.any(),
+  });
+  const paresd = schema.parse(input);
+
   while (remain > 0) {
     const range = Math.min(remain, maxDay);
 
@@ -54,8 +61,8 @@ export const fetch_range = async (
     const json = await fetch_webio(params);
     logger.info(
       {
-        isin: input.isuCd,
-        bld: input.bld,
+        isin: paresd.isuCd,
+        bld: paresd.bld,
         cursorStartDate,
         cursorEndDate,
       },
