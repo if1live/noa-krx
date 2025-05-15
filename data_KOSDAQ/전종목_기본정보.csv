@@ -154,7 +154,6 @@ KR7027830009,027830,대성창업투자,대성창투,"Daesung Private Equity, Inc
 KR7104040001,104040,대성파인텍,대성파인텍,"Daesung Fine Tech. Co., Ltd",2009-01-23,KOSDAQ,주권,벤처기업부,보통주,100
 KR7129920005,129920,대성하이텍,대성하이텍,"Daesung Hi-Tech Co., Ltd.",2022-08-22,KOSDAQ,주권,벤처기업부,보통주,100
 KR7442310009,442310,대신밸런스제14호기업인수목적,대신밸런스제14호스팩,Daishin Balance No.14 Special Purpose Acquisition Company,2022-12-05,KOSDAQ,주권,SPAC(소속부없음),보통주,100
-KR7457390003,457390,대신밸런스제15호기업인수목적,대신밸런스제15호스팩,Daishin Balance No.15 Special Purpose Acquisition Company,2023-08-30,KOSDAQ,주권,SPAC(소속부없음),보통주,100
 KR7457630002,457630,대신밸런스제16호기업인수목적,대신밸런스제16호스팩,Daishin Balance No.16 Special Purpose Acquisition Company,2023-09-04,KOSDAQ,주권,SPAC(소속부없음),보통주,100
 KR7471050005,471050,대신밸런스제17호기업인수목적,대신밸런스제17호스팩,Daishin Balance No.17 Special Purpose Acquisition Company,2024-01-24,KOSDAQ,주권,SPAC(소속부없음),보통주,100
 KR7478780000,478780,대신밸런스제18호기업인수목적,대신밸런스제18호스팩,Daishin Balance No.18 Special Purpose Acquisition Company,2024-08-22,KOSDAQ,주권,SPAC(소속부없음),보통주,100
@@ -515,7 +514,7 @@ KR7043710003,043710,서울리거,서울리거,"SEOULEAGUER CO., LTD.",2002-07-11
 KR7092190008,092190,서울바이오시스,서울바이오시스,"SEOUL VIOSYS CO., LTD.",2020-03-06,KOSDAQ,주권,중견기업부,보통주,500
 KR7046890000,046890,서울반도체,서울반도체,"SEOUL SEMICONDUCTOR CO., LTD.",2002-01-17,KOSDAQ GLOBAL,주권,중견기업부,보통주,500
 KR7063170005,063170,서울옥션,서울옥션,Seoul Auction Co. Ltd..,2008-07-01,KOSDAQ,주권,중견기업부,보통주,500
-KR7027040005,027040,서울전자통신,서울전자통신,SEOUL ELECTRONICS & TELECOM,1999-12-03,KOSDAQ,주권,관리종목(소속부없음),보통주,500
+KR7027040005,027040,서울전자통신,서울전자통신,SEOUL ELECTRONICS & TELECOM,1999-12-03,KOSDAQ,주권,관리종목(소속부없음),보통주,100
 KR7018680009,018680,서울제약,서울제약,"SEOUL PHARMA CO., LTD",2000-08-18,KOSDAQ,주권,벤처기업부,보통주,500
 KR7036120004,036120,서울평가정보,서울평가정보,Seoul Information Service,1999-12-07,KOSDAQ,주권,중견기업부,보통주,500
 KR7093920007,093920,서원인텍,서원인텍,"SEOWONINTECH.CO.,LTD",2007-12-20,KOSDAQ,주권,우량기업부,보통주,500
@@ -1539,6 +1538,7 @@ KR7117730002,117730,티로보틱스,티로보틱스,"T-Robotics co., Ltd.",2018-
 KR7033830001,033830,티비씨,티비씨,TBC,2010-11-29,KOSDAQ,주권,중견기업부,보통주,500
 KR7057680001,057680,티사이언티픽,티사이언티픽,"T Scientific Co.,Ltd",2002-06-18,KOSDAQ,주권,벤처기업부,보통주,500
 KR7204610000,204610,티쓰리엔터테인먼트,티쓰리,T3 Entertainment Inc.,2022-11-17,KOSDAQ,주권,벤처기업부,보통주,100
+KR7125020008,125020,티씨머티리얼즈,티씨머티리얼즈,"TC Materials Co., Ltd.",2025-05-15,KOSDAQ,주권,중견기업부,보통주,500
 KR7064760002,064760,티씨케이,티씨케이,"TOKAI CARBON KOREA CO., LTD",2003-08-18,KOSDAQ GLOBAL,주권,우량기업부,보통주,500
 KR7246710008,246710,티앤알바이오팹,티앤알바이오팹,"T&R Biofab Co., Ltd",2018-11-28,KOSDAQ,주권,기술성장기업부,보통주,500
 KR7340570001,340570,티앤엘,티앤엘,"T&L Co., LTD.",2020-11-20,KOSDAQ,주권,우량기업부,보통주,500
