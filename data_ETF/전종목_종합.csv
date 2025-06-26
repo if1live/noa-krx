@@ -241,7 +241,7 @@
 466950,TIGER 글로벌AI액티브,Indxx Artificial Intelligence and Big Data 지수(Net Total Return),해외,주식,0.7900,0.8700,1.2666,배당소득세(보유기간과세),KR7466950003,K55301E58613
 440340,TIGER 글로벌멀티에셋TIF액티브,INDXX 멀티에셋인컴 지수(시장가격 지수),해외,혼합자산,0.5500,0.6700,0.7935,배당소득세(보유기간과세),KR7440340008,K55301DW0591
 476690,TIGER 글로벌비만치료제TOP2Plus,Indxx Global Obesity Treatment Top 2 Plus 지수 (시장가격),해외,주식,0.4500,0.5400,0.7256,배당소득세(보유기간과세),KR7476690003,K55301E88149
-480310,TIGER 글로벌온디바이스AI,Mirae Asset Global On-Device AI 지수 (시장가격),해외,주식,0.4900,0.5900,0.8663,배당소득세(보유기간과세),KR7480310002,K55301E97694
+480310,TIGER 글로벌온디바이스AI,Mirae Asset Global On-Device AI 지수 (NTR),해외,주식,0.4900,0.5900,0.8663,배당소득세(보유기간과세),KR7480310002,K55301E97694
 387270,TIGER 글로벌이노베이션액티브,NASDAQ 100,해외,주식,0.5500,0.5900,0.7472,배당소득세(보유기간과세),KR7387270002,K55301DH6423
 371450,TIGER 글로벌클라우드컴퓨팅INDXX,Indxx Global Cloud Computing Index(Net Total Return),해외,주식,0.4900,0.5700,0.6505,배당소득세(보유기간과세),KR7371450008,K55301DC7616
 248270,TIGER S&P글로벌헬스케어(합성),S&P Global 1200 Health Care Index,해외,주식,0.4000,0.4800,0.4955,배당소득세(보유기간과세),KR7248270001,K55301BE6980
@@ -423,6 +423,7 @@
 289040,KODEX MSCI KOREA ESG유니버설,MSCI Korea ESG Universal Capped Index,국내,주식,0.3000,0.3500,0.3983,비과세,KR7289040008,K55105BZ5845
 156080,KODEX MSCI Korea,MSCI Korea Index,국내,주식,0.0900,0.1300,0.1398,비과세,KR7156080004,KR5105AA2075
 278540,KODEX MSCI Korea TR,MSCI Korea TR Index,국내,주식,0.0900,0.1200,0.1317,배당소득세(보유기간과세),KR7278540000,K55105BW1235
+251350,KODEX MSCI선진국,MSCI World,해외,주식,0.3000,0.3700,0.3779,배당소득세(해외주식투자전용ETF),KR7251350005,K55105BF7266
 269420,KODEX S&P글로벌인프라(합성),S&P Global Infrastructure Index,해외,주식,0.2600,0.3300,0.3438,배당소득세(보유기간과세),KR7269420006,K55105BN5708
 291890,KODEX MSCI EM선물(H),iEdge Emerging Markets Futures Index(ER),해외,주식,0.4500,0.6900,0.8212,배당소득세(보유기간과세),KR7291890002,K55105C52086
 433970,KODEX TDF2030액티브,Samsung Korea Target Date 2030 Index (Price Return),국내&해외,혼합자산,0.2000,0.2600,0.3233,배당소득세(보유기간과세),KR7433970001,K55105DT5353
@@ -436,8 +437,10 @@
 271050,KODEX WTI원유선물인버스(H),S&P GSCI Crude Oil Index ER,해외,원자재,0.3500,0.4100,0.6890,배당소득세(보유기간과세),KR7271050007,K55105BP4345
 261220,KODEX WTI원유선물(H),S&P GSCI Crude Oil Index ER,해외,원자재,0.3500,0.4000,0.6487,배당소득세(보유기간과세),KR7261220008,K55105BJ8567
 468380,KODEX iShares미국하이일드액티브,ICE BofAML US HY Constrained Index(Total Return),해외,채권,0.1500,0.1700,0.2763,배당소득세(보유기간과세),KR7468380001,K55105E57081
+275290,KODEX 가치주,MSCI Korea IMI Enhanced Value Capped,국내,주식,0.3000,0.3500,0.4078,비과세,KR7275290005,K55105BQ9434
 300950,KODEX 게임산업,FnGuide 게임 산업 지수,국내,주식,0.4500,0.5100,0.5581,비과세,KR7300950003,K55105CB0603
 266390,KODEX 경기소비재,KRX 경기소비재,국내,주식,0.4500,0.4700,0.4879,비과세,KR7266390004,K55105BM5592
+279530,KODEX 고배당주,FnGuide 고배당 Plus 지수,국내,주식,0.3000,0.3600,0.5008,비과세,KR7279530000,K55105BW6366
 280940,KODEX 골드선물인버스(H),S&P GSCI GOLD Index Excess Return,해외,원자재,0.4500,0.5200,0.6748,배당소득세(보유기간과세),KR7280940008,K55105BY2041
 132030,KODEX 골드선물(H),S&P GSCI Gold Index(TR),해외,원자재,0.6800,0.7300,0.7948,배당소득세(보유기간과세),KR7132030008,KR5105705846
 138910,KODEX 구리선물(H),S&P GSCI North American Copper Index(TR),해외,원자재,0.6800,0.7300,0.8673,배당소득세(보유기간과세),KR7138910005,KR5105A08898
@@ -456,6 +459,7 @@
 337120,KODEX 멀티팩터,FnGuide 멀티팩터 지수,국내,주식,0.3000,0.3600,0.4067,비과세,KR7337120000,K55105CX0524
 401470,KODEX 메타버스액티브,FnGuide K-메타버스 지수,국내,주식,0.5000,0.5600,0.6493,배당소득세(보유기간과세),KR7401470000,K55105DM5970
 244620,KODEX 모멘텀Plus,FnGuide 모멘텀 Plus 지수,국내,주식,0.3000,0.3500,0.5192,비과세,KR7244620001,K55105BD0552
+275280,KODEX 모멘텀주,MSCI Korea IMI Momentum Capped,국내,주식,0.3000,0.3500,0.4672,비과세,KR7275280006,K55105BQ9400
 308620,KODEX 미국10년국채선물,S&P 10-Year U.S. Treasury Note Futures KRW(ER),해외,채권,0.0900,0.1500,0.1939,배당소득세(보유기간과세),KR7308620004,K55105CF2639
 484790,KODEX 미국30년국채액티브(H),KEDI-KAP 미국 국채 20+ 지수(TR),해외,채권,0.0150,0.0600,0.1454,배당소득세(보유기간과세),KR7484790001,K55105EB5592
 304670,KODEX 미국30년국채울트라선물인버스(H),S&P Ultra T-Bond Futures Index(ER),해외,채권,0.3000,0.3600,0.4719,배당소득세(보유기간과세),KR7304670003,K55105CD0213
@@ -520,6 +524,7 @@
 385510,KODEX 신재생에너지액티브,FnGuide K-신재생에너지 플러스 지수,국내,주식,0.5000,0.5600,0.6597,배당소득세(보유기간과세),KR7385510003,K55105DH2776
 446690,KODEX 아시아AI반도체exChina액티브,iSelect 아시아반도체 제조동맹 지수(시장가격),해외,주식,0.5000,0.7000,1.0407,배당소득세(보유기간과세),KR7446690000,K55105DX9912
 437070,KODEX 아시아달러채권ESG플러스액티브,Bloomberg MSCI EM Asia Investment Grade Credit SRI Index(Total Return),해외,채권,0.1800,0.2300,0.2464,배당소득세(보유기간과세),KR7437070006,K55105DR4770
+275300,KODEX 우량주,MSCI Korea IMI Quality Capped,국내,주식,0.3000,0.3500,0.4309,비과세,KR7275300002,K55105BQ9418
 395150,KODEX 웹툰&드라마,FnGuide 웹툰&드라마 지수,국내,주식,0.4500,0.5100,0.5899,비과세,KR7395150006,K55105DI5380
 456250,KODEX 유럽명품TOP10 STOXX,STOXX Europe Luxury 10 Index(Price Return),해외,주식,0.4500,0.5500,0.6078,배당소득세(보유기간과세),KR7456250000,K55105E16996
 400570,KODEX 유럽탄소배출권선물ICE(H),ICE EUA Carbon Futures Index(Excess Return),해외,기타,0.6400,0.7100,0.8211,배당소득세(보유기간과세),KR7400570008,K55105DL9742
