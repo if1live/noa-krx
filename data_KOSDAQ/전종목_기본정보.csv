@@ -33,7 +33,6 @@ KR7366030005,366030,공구우먼,공구우먼,"09women Co., Ltd.",2022-03-23,KOS
 KR7014200000,014200,광림,광림,"KANGLIM Co., LTD.",1993-07-07,KOSDAQ,주권,관리종목(소속부없음),보통주,100
 KR7029480001,029480,광무,광무,Kwangmu,1996-08-27,KOSDAQ,주권,중견기업부,보통주,500
 KR7026910000,026910,광진실업,광진실업,KwangjinInd,1996-01-03,KOSDAQ,주권,중견기업부,보통주,500
-KR7440790004,440790,교보13호기업인수목적,교보13호스팩,Kyobo 13 Special Purpose Acquisition Company,2022-11-02,KOSDAQ,주권,관리종목(소속부없음),보통주,100
 KR7456490002,456490,교보14호기업인수목적,교보14호스팩,Kyobo 14 Special Purpose Acquisition Company,2023-07-06,KOSDAQ,주권,SPAC(소속부없음),보통주,100
 KR7465320000,465320,교보15호기업인수목적,교보15호스팩,Kyobo 15 Special Purpose Acquisition Company,2023-12-05,KOSDAQ,주권,SPAC(소속부없음),보통주,100
 KR7482520004,482520,교보16호기업인수목적,교보16호스팩,Kyobo 16 Special Purpose Acquisition Company,2024-08-13,KOSDAQ,주권,SPAC(소속부없음),보통주,100
@@ -155,7 +154,6 @@ KR7036480002,036480,대성미생물연구소,대성미생물,"Daesung Microbiolo
 KR7027830009,027830,대성창업투자,대성창투,"Daesung Private Equity, Inc.",1999-11-30,KOSDAQ,주권,벤처기업부,보통주,500
 KR7104040001,104040,대성파인텍,대성파인텍,"Daesung Fine Tech. Co., Ltd",2009-01-23,KOSDAQ,주권,벤처기업부,보통주,100
 KR7129920005,129920,대성하이텍,대성하이텍,"Daesung Hi-Tech Co., Ltd.",2022-08-22,KOSDAQ,주권,벤처기업부,보통주,100
-KR7442310009,442310,대신밸런스제14호기업인수목적,대신밸런스제14호스팩,Daishin Balance No.14 Special Purpose Acquisition Company,2022-12-05,KOSDAQ,주권,관리종목(소속부없음),보통주,100
 KR7457630002,457630,대신밸런스제16호기업인수목적,대신밸런스제16호스팩,Daishin Balance No.16 Special Purpose Acquisition Company,2023-09-04,KOSDAQ,주권,SPAC(소속부없음),보통주,100
 KR7471050005,471050,대신밸런스제17호기업인수목적,대신밸런스제17호스팩,Daishin Balance No.17 Special Purpose Acquisition Company,2024-01-24,KOSDAQ,주권,SPAC(소속부없음),보통주,100
 KR7478780000,478780,대신밸런스제18호기업인수목적,대신밸런스제18호스팩,Daishin Balance No.18 Special Purpose Acquisition Company,2024-08-22,KOSDAQ,주권,SPAC(소속부없음),보통주,100
@@ -686,7 +684,7 @@ KR7311690002,311690,씨제이바이오사이언스,CJ 바이오사이언스,CJ B
 KR7035760008,035760,씨제이이엔엠,CJ ENM,"CJ ENM CO., Ltd.",1999-11-23,KOSDAQ GLOBAL,주권,중견기업부,보통주,5000
 KR7051500007,051500,씨제이프레시웨이,CJ프레시웨이,CJ Freshway Corporation,2001-07-26,KOSDAQ,주권,우량기업부,보통주,1000
 KR7096530001,096530,씨젠,씨젠,Seegene Inc.,2010-09-10,KOSDAQ,주권,우량기업부,보통주,500
-KR7083790006,083790,씨지인바이츠,CG인바이츠,CG Invites,2006-01-06,KOSDAQ,주권,중견기업부,보통주,500
+KR7083790006,083790,씨지인바이츠,CG인바이츠,CG Invites,2006-01-06,KOSDAQ,주권,벤처기업부,보통주,500
 KR7101240000,101240,씨큐브,씨큐브,"CQV Co., Ltd.",2011-11-08,KOSDAQ,주권,우량기업부,보통주,500
 KR7060590007,060590,씨티씨바이오,씨티씨바이오,"CTC BIO, INC.",2002-02-21,KOSDAQ,주권,중견기업부,보통주,500
 KR7260930003,260930,씨티케이,씨티케이,CTK,2017-12-07,KOSDAQ,주권,중견기업부,보통주,500
