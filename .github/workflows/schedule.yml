@@ -44,11 +44,39 @@ jobs:
       - name: Install dependencies
         run: pnpm install --no-frozen-lockfile
 
+      - name: Restore data branch
+        id: data-cache
+        uses: actions/cache@v4
+        with:
+          path: |
+            ./data
+          key: data-cache-${{ github.sha }}
+          restore-keys: |
+            data-cache-
+
       - name: Checkout data branch
+        if: steps.data-cache.outputs.cache-hit != 'true'
         uses: actions/checkout@v5
         with:
           ref: data
-          path: data_branch
+          path: data
+          fetch-depth: 0
+          persist-credentials: true
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Cache repository (after checkout)
+        if: steps.data-cache.outputs.cache-hit != 'true'
+        uses: actions/cache@v4
+        with:
+          path: ./data
+          key: data-cache-${{ github.sha }}
+
+      - name: Synchronize data branch
+        working-directory: ./data
+        run: |
+          git fetch origin
+          git switch --discard-changes data
+          git reset --hard origin/data
 
       # https://docs.github.com/en/actions/using-workflows/workflow-commands-for-github-actions#environment-files
       # ETF 종목의 순자산총액은 다음날이 되어야 나온다. 공휴일이 끼면 날짜 어긋나니까 여유있게 긁는다.
@@ -65,18 +93,18 @@ jobs:
       # 과거를 조회하면 기초지수 수치가 조금씩 바뀔수 있다. 이를 피하려고 당일 데이터만 크롤링
       - name: ETF
         run: |
-          node cli.ts etf --data-dir ./data_branch/data_ETF --start-date ${TODAY_KST} --end-date ${TODAY_KST} --overwrite
-          node cli.ts kofia --data-dir ./data_branch/data_ETF
-          node cli.ts fusion --data-dir ./data_branch/data_ETF
+          node cli.ts etf --data-dir ./data/data_ETF --start-date ${TODAY_KST} --end-date ${TODAY_KST} --overwrite
+          node cli.ts kofia --data-dir ./data/data_ETF
+          node cli.ts fusion --data-dir ./data/data_ETF
 
       - name: stock
         run: |
-          node cli.ts stock --data-dir ./data_branch/data_KOSPI --start-date ${YESTERDAY_KST} --end-date ${TODAY_KST} --overwrite --market kospi
-          node cli.ts stock --data-dir ./data_branch/data_KOSDAQ --start-date ${YESTERDAY_KST} --end-date ${TODAY_KST} --overwrite --market kosdaq
+          node cli.ts stock --data-dir ./data/data_KOSPI --start-date ${YESTERDAY_KST} --end-date ${TODAY_KST} --overwrite --market kospi
+          node cli.ts stock --data-dir ./data/data_KOSDAQ --start-date ${YESTERDAY_KST} --end-date ${TODAY_KST} --overwrite --market kosdaq
 
       - name: commit
         run: |
-          cd data_branch
+          cd data
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
           git add *
