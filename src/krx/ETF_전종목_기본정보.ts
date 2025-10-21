@@ -2,7 +2,7 @@ import { fetch_webio } from "./fetcher.ts";
 import * as parser from "./parser.ts";
 import type { MyDate } from "./types.ts";
 
-// biome-ignore lint/complexity/noBannedTypes: <explanation>
+// biome-ignore lint/complexity/noBannedTypes: empty type
 export type Input = {};
 
 export interface Element {

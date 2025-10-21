@@ -34,7 +34,7 @@ export const createDateFileName = (date: MyDate) => {
 export const mkdirp = async (dir: string) => {
   try {
     await fs.mkdir(dir, { recursive: true });
-  } catch (e) {
+  } catch (_e) {
     //
   }
 };

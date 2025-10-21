@@ -28,7 +28,7 @@ const bld = "dbms/MDC/STAT/standard/MDCSTAT00101";
  */
 export const load = async (input: Input): Promise<Element[]> => {
   const idxIndMidclssCd = 주가지수계열.convertMidClass(input.계열구분);
-  const { 계열구분: drop_계열구분, ...rest } = input;
+  const { 계열구분: _계열구분, ...rest } = input;
   const params = {
     ...rest,
     idxIndMidclssCd,

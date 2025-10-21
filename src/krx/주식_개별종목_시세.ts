@@ -32,7 +32,7 @@ export const load = async (input: Input): Promise<Element[]> => {
   const { isin, startDate, endDate, ...rest } = input;
   const params = {
     ...rest,
-    isuCd: input.isin,
+    isuCd: isin,
     adjStkPrc: "2",
     bld,
   };
