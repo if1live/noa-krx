@@ -8,6 +8,7 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
+    "build": "pnpm -r build",
     "fix": "pnpm -r fix",
     "lint": "pnpm -r lint",
     "test": "pnpm -r test run"
