@@ -41,10 +41,7 @@ const main = async (input: Input) => {
   }
 };
 
-const fetchSummary = async (input: {
-  dataDir: string;
-  date: MyDate;
-}) => {
+const fetchSummary = async (input: { dataDir: string; date: MyDate }) => {
   const { dataDir, date } = input;
   const rows = await api.펀드별_보수비용비교.load({
     date,
@@ -56,7 +53,7 @@ const fetchSummary = async (input: {
   }
 
   const records = rows.map((row) => {
-    const { 운용회사, ...rest } = row;
+    const { 운용회사: _운용회사, ...rest } = row;
     return rest;
   });
   const text = stringifyCSV(records);

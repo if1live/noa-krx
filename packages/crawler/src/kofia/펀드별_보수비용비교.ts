@@ -2,10 +2,7 @@ import { XMLParser } from "fast-xml-parser";
 import { MyDateMod } from "../krx/mod.ts";
 import type { MyDate } from "../krx/types.ts";
 
-const createPayload = (params: {
-  name: string;
-  date: string;
-}) =>
+const createPayload = (params: { name: string; date: string }) =>
   `
 <?xml version="1.0" encoding="utf-8"?>
 <message>
@@ -84,7 +81,7 @@ export const load = async (input: Input) => {
   const jsonObj = parser.parse(xmlText);
 
   const data = jsonObj.root.message.DISCondFuncListDTO;
-  const count = data.dbio_total_count_;
+  const _count = data.dbio_total_count_;
 
   const oneOrMany = data.selectMeta;
   const list = Array.isArray(oneOrMany)

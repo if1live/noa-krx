@@ -1,11 +1,11 @@
 import { MyDateMod } from "./mod.ts";
 import type { MyDate } from "./types.ts";
 
-const parse_decimal = (value: string) => {
+const parse_decimal = (value: string): number => {
   return Number(value.replace(/,/g, ""));
 };
 
-const parse_nullishDecimal = (value: string | undefined) => {
+const _parse_nullishDecimal = (value: string | undefined) => {
   if (value === "-") {
     return undefined;
   }

@@ -1,4 +1,3 @@
-import fs from "node:fs/promises";
 import path from "node:path";
 import { Command } from "commander";
 import * as R from "remeda";
@@ -69,10 +68,7 @@ const main = async (input: Input) => {
 
   const rows = infoRows
     .map((info) => ({ info, fee: findFee(feeTable, info) }))
-    .map(({ info, fee }) => {
-      if (!fee) return;
-      return { info, fee };
-    })
+    .map(({ info, fee }) => (fee ? { info, fee } : null))
     .filter(R.isNonNullish);
 
   const records = rows.map(({ info, fee }) => {

@@ -82,7 +82,7 @@ const fetchSummary = async (input: Input) => {
   const records = rows.map((row) => {
     // 생각보다 상장주식수가 자주 바뀐다. 매일 3~4개 종목에서 변경되네?
     // 상장주식수는 일자별 데이터에 포함되서 버려도 유도할 수 있다.
-    const { 상장주식수: _drop_상장주식수, ...rest } = row;
+    const { 상장주식수: _상장주식수, ...rest } = row;
     return rest;
   });
   const text = stringifyCSV(records);
@@ -108,12 +108,12 @@ const fetchDate = async (input: Input, date: MyDate, label: string) => {
 
   try {
     if (!overwrite) {
-      const stat = await fs.stat(fp);
+      const _stat = await fs.stat(fp);
       logger.info(`${label}: date=${date} exists`);
       // 있으면 스킵. 데이터 갱신이 필요할 수 있음
       return;
     }
-  } catch (e) {
+  } catch (_e) {
     //
   }
 
@@ -135,7 +135,7 @@ const fetchDate = async (input: Input, date: MyDate, label: string) => {
 
   // 전종목 데이터 저장
   const rows = list.map((row) => {
-    const { 표준코드: _drop_표준코드, ...rest } = row;
+    const { 표준코드: _표준코드, ...rest } = row;
     return rest;
   });
 

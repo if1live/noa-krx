@@ -20,12 +20,12 @@ jobs:
       - uses: actions/checkout@v5
       - uses: actions/setup-node@v3
         with:
-          node-version: 23
+          node-version: 24
 
       - uses: pnpm/action-setup@v2
         id: pnpm-install
         with:
-          version: 9.15.4
+          version: 10
 
       - name: Get pnpm store directory
         id: pnpm-cache
@@ -74,6 +74,10 @@ jobs:
       - name: Synchronize data branch
         working-directory: ./data
         run: |
+          # -w0로 줄바꿈 제거
+          BASIC=$(printf 'x-access-token:%s' "${{ secrets.GITHUB_TOKEN }}" | base64 -w0)
+          git config 'http.https://github.com/.extraheader' "Authorization: basic $BASIC"
+
           git fetch origin
           git switch --discard-changes data
           git reset --hard origin/data
@@ -92,21 +96,23 @@ jobs:
 
       # 과거를 조회하면 기초지수 수치가 조금씩 바뀔수 있다. 이를 피하려고 당일 데이터만 크롤링
       - name: ETF
+        working-directory: ./packages/crawler
         run: |
-          node cli.ts etf --data-dir ./data/data_ETF --start-date ${TODAY_KST} --end-date ${TODAY_KST} --overwrite
-          node cli.ts kofia --data-dir ./data/data_ETF
-          node cli.ts fusion --data-dir ./data/data_ETF
+          node cli.ts etf --data-dir ../../data/data_ETF --start-date ${TODAY_KST} --end-date ${TODAY_KST} --overwrite
+          node cli.ts kofia --data-dir ../../data/data_ETF
+          node cli.ts fusion --data-dir ../../data/data_ETF
 
       - name: stock
+        working-directory: ./packages/crawler
         run: |
-          node cli.ts stock --data-dir ./data/data_KOSPI --start-date ${YESTERDAY_KST} --end-date ${TODAY_KST} --overwrite --market kospi
-          node cli.ts stock --data-dir ./data/data_KOSDAQ --start-date ${YESTERDAY_KST} --end-date ${TODAY_KST} --overwrite --market kosdaq
+          node cli.ts stock --data-dir ../../data/data_KOSPI --start-date ${YESTERDAY_KST} --end-date ${TODAY_KST} --overwrite --market kospi
+          node cli.ts stock --data-dir ../../data/data_KOSDAQ --start-date ${YESTERDAY_KST} --end-date ${TODAY_KST} --overwrite --market kosdaq
 
       - name: commit
+        working-directory: ./data
         run: |
-          cd data
-          git config user.name "github-actions"
-          git config user.email "github-actions@github.com"
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
           git add *
           git commit -m "schedule: ${TODAY_KST}" || echo "No changes to commit"
           git push origin data

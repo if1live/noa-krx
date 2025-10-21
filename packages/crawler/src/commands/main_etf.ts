@@ -1,8 +1,6 @@
 import fs from "node:fs/promises";
-import os from "node:os";
 import path from "node:path";
 import { setTimeout } from "node:timers/promises";
-import { assert, assertNonEmptyArray } from "@toss/assert";
 import { Command } from "commander";
 import * as R from "remeda";
 import { z } from "zod";
@@ -81,7 +79,7 @@ const fetchSummary = async (input: Input) => {
   const text = stringifyCSV(
     rows.map((row) => {
       // 자주 바뀌는 필드 버리기. 요약 정보에서는 없어도 될거같아서
-      const { 상장좌수, ...rest } = row;
+      const { 상장좌수: _상장좌수, ...rest } = row;
       return rest;
     }),
   );
@@ -108,12 +106,12 @@ const fetchDate = async (input: Input, date: MyDate, label: string) => {
 
   try {
     if (!overwrite) {
-      const stat = await fs.stat(fp_etf);
+      const _stat = await fs.stat(fp_etf);
       logger.info(`${label}: date=${date} exists`);
       // 있으면 스킵. 데이터 갱신이 필요할 수 있음
       return;
     }
-  } catch (e) {
+  } catch (_e) {
     //
   }
 
@@ -141,8 +139,8 @@ const fetchDate = async (input: Input, date: MyDate, label: string) => {
       기초지수_종가,
       기초지수_대비,
       기초지수_등락률,
-      종목코드: _drop_종목코드,
-      순자산총액: _drop_순자산총액,
+      종목코드: _종목코드,
+      순자산총액: _순자산총액,
       ...row_etf
     } = row;
 
