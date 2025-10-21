@@ -1,9 +1,9 @@
 import { Command } from "commander";
 import {
   EntryPoint_ETF,
-  EntryPoint_Stock,
-  EntryPoint_Kofia,
   EntryPoint_Fusion,
+  EntryPoint_Kofia,
+  EntryPoint_Stock,
 } from "./src/commands/index.ts";
 
 const main = async () => {
