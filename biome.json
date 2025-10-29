@@ -30,6 +30,10 @@
       "recommended": true,
       "complexity": {
         "useLiteralKeys": "off"
+      },
+      "a11y": {
+        "noStaticElementInteractions": "off",
+        "useKeyWithClickEvents": "off"
       }
     }
   },
