@@ -13,27 +13,23 @@ import z from "zod";
 import { EtfDisplayUrls, EtfSheetUrls, fetcher } from "./urls";
 
 const Row = z.object({
-  펀드명: z.string(),
-  펀드유형: z.string(),
-  설정일: z.string(),
-  펀드코드: z.string(),
-  운용보수: z.coerce.number(),
-  판매보수: z.coerce.number(),
-  수탁보수: z.coerce.number(),
-  사무관리보수: z.coerce.number(),
-  보수합계: z.coerce.number(),
-  유사유형평균보수율: z.coerce.number(),
-  기타비용: z.coerce.number(),
+  단축코드: z.string(),
+  한글종목약명: z.string(),
+  기초지수명: z.string(),
+  기초시장분류: z.string(),
+  기초자산분류: z.string(),
+  총보수: z.coerce.number(),
   TER: z.coerce.number(),
-  선취수수료: z.coerce.number(),
-  후취수수료: z.coerce.number(),
-  매매중개수수료율: z.coerce.number(),
+  실부담비용률: z.coerce.number(),
+  과세유형: z.string(),
+  표준코드: z.string(),
+  펀드코드: z.string(),
 });
 type Row = z.infer<typeof Row>;
 
-export const KofiaPage = () => {
+export const EtfPage = () => {
   const { data, error, isLoading } = useSWRImmutable(
-    EtfSheetUrls.전종목_보수비용,
+    EtfSheetUrls.전종목_종합,
     fetcher,
   );
 
@@ -45,71 +41,80 @@ export const KofiaPage = () => {
 
   return (
     <>
-      <h1>KOFIA 펀드별 보수비용비교</h1>
+      <h1>ETF 종합</h1>
       <p>
         <a
-          href="https://dis.kofia.or.kr/websquare/index.jsp?w2xPath=/wq/fundann/DISFundFeeCMS.xml&divisionId=MDIS01005001000000&serviceId=SDIS01005001000"
+          href="https://data.krx.co.kr/contents/MDC/MDI/mdiLoader/index.cmd?menuId=MDC020103010901"
           target="_blank"
           rel="noopener noreferrer"
         >
-          kofia
+          KRX
         </a>
         {" | "}
         <a
-          href={EtfDisplayUrls.전종목_보수비용}
+          href={EtfDisplayUrls.전종목_종합}
           target="_blank"
           rel="noopener noreferrer"
         >
-          github
+          github 전종목 종합
+        </a>
+        {" | "}
+        <a
+          href={EtfDisplayUrls.전종목_시세}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          github 전종목 시세
         </a>
       </p>
-      <KofiaTable rows={rows} />
+      <LocalTable rows={rows} />
     </>
   );
 };
 
-const KofiaTable = (props: { rows: Row[] }) => {
+const LocalTable = (props: { rows: Row[] }) => {
   const [sorting, setSorting] = useState<SortingState>([]);
 
   const columns = useMemo<Array<ColumnDef<Row>>>(
     () => [
       {
-        accessorKey: "펀드명",
+        accessorKey: "단축코드",
+        size: 80,
+      },
+      {
+        accessorKey: "한글종목약명",
+        size: 350,
+      },
+      {
+        accessorKey: "기초지수명",
         size: 600,
       },
       {
-        accessorKey: "보수합계",
-        header: "총보수율",
+        accessorKey: "실부담비용률",
         cell: (info) => info.getValue<number>().toFixed(4),
       },
       {
-        accessorKey: "유사유형평균보수율",
-        cell: (info) => info.getValue<number>().toFixed(4),
-      },
-      {
-        accessorKey: "TER",
-        cell: (info) => info.getValue<number>().toFixed(4),
-      },
-      {
-        accessorFn: (row) => row.TER + row.매매중개수수료율,
-        header: "실부담비용률",
-        cell: (info) => info.getValue<number>().toFixed(4),
-      },
-      {
-        accessorKey: "설정일",
-      },
-      {
-        accessorKey: "펀드코드",
+        accessorKey: "과세유형",
         cell: (info) => {
-          const code = info.getValue<string>();
-          const url = `https://dis.kofia.or.kr/websquare/popup.html?w2xPath=/wq/com/popup/DISComFundSmryInfo.xml&standardCd=${code}`;
-          return (
-            <a href={url} target="_blank">
-              {info.getValue<Date>().toLocaleString()}
-            </a>
-          );
+          const text = info.getValue<string>();
+          switch (text) {
+            case "비과세":
+              return "비과세";
+            case "비과세(분리과세부동산ETF)":
+              return "비과세X";
+            case "배당소득세(보유기간과세)":
+              return "배당소득세A";
+            case "배당소득세(분리과세부동산ETF)":
+              return "배당소득세B";
+            case "배당소득세(해외주식투자전용ETF)":
+              return "배당소득세C";
+            default:
+              return text;
+          }
         },
       },
+      { accessorKey: "기초시장분류" },
+      { accessorKey: "기초자산분류" },
     ],
     [],
   );
