@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "tsc -b && vite build --base=/noa-krx/",
     "fix": "biome check --write --unsafe ./src",
     "lint": "biome check ./src",
     "preview": "vite preview"
