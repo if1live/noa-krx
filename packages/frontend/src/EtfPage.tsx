@@ -41,7 +41,7 @@ export const EtfPage = () => {
 
   return (
     <>
-      <h1>ETF 종합</h1>
+      <h2>ETF 종합</h2>
       <p>
         <a
           href="https://data.krx.co.kr/contents/MDC/MDI/mdiLoader/index.cmd?menuId=MDC020103010901"

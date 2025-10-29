@@ -45,7 +45,7 @@ export const KofiaPage = () => {
 
   return (
     <>
-      <h1>KOFIA 펀드별 보수비용비교</h1>
+      <h2>KOFIA 펀드별 보수비용비교</h2>
       <p>
         <a
           href="https://dis.kofia.or.kr/websquare/index.jsp?w2xPath=/wq/fundann/DISFundFeeCMS.xml&divisionId=MDIS01005001000000&serviceId=SDIS01005001000"
