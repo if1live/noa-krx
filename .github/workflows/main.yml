@@ -8,6 +8,9 @@ jobs:
   main:
     runs-on: ubuntu-latest
 
+    permissions:
+      contents: write
+
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-node@v3
@@ -42,3 +45,12 @@ jobs:
 
       - name: test
         run: pnpm test
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        if: ${{ github.ref == 'refs/heads/main' }}
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          commit_message: 'deploy: ${{ env.current_datetime }}'
+          publish_branch: gh-pages
+          publish_dir: ./packages/frontend/dist/
