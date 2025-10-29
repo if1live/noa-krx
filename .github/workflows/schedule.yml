@@ -88,11 +88,7 @@ jobs:
       # KOSPI, KOSDAQ는 당일 데이터로도 문제 없어보임
       - name: date
         run: |
-          export TZ="Etc/GMT-9"
-          echo "TODAY_KST=$(date "+%Y-%m-%d")" >> $GITHUB_ENV
-          echo "YESTERDAY_KST=$(date --date="yesterday" "+%Y-%m-%d")" >> $GITHUB_ENV
-          echo "START_DATE=$(date -d "14 days ago" +"%Y-%m-%d")" >> $GITHUB_ENV
-          echo "END_DATE=$(date "+%Y-%m-%d")" >> $GITHUB_ENV
+          ./etc/prepare-env.sh >> $GITHUB_ENV
 
       # 과거를 조회하면 기초지수 수치가 조금씩 바뀔수 있다. 이를 피하려고 당일 데이터만 크롤링
       - name: ETF
