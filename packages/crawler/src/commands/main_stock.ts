@@ -3,16 +3,11 @@ import path from "node:path";
 import { setTimeout } from "node:timers/promises";
 import { Command } from "commander";
 import { z } from "zod";
-import {
-  createDateFileName,
-  mkdirp,
-  stringifyCSV,
-  writeCSV,
-} from "../helpers.ts";
+import { stringifyCSV, writeCSV } from "../helpers.ts";
 import { logger } from "../instances.ts";
 import * as api from "../krx/index.ts";
 import { MyDateMod } from "../krx/mod.ts";
-import type { MyDate, MyYear } from "../krx/types.ts";
+import type { MyDate } from "../krx/types.ts";
 
 export const Input = z.object({
   dataDir: z.string(),
@@ -39,29 +34,22 @@ program
     await main(input);
   });
 
-const prepareDirectory = async (dataDir: string) => {
-  const todayYear = new Date().getFullYear();
-  for (let year = 2002; year <= todayYear; year++) {
-    const dir = path.resolve(dataDir, "전종목", String(year));
-    await mkdirp(dir);
-  }
-};
-
 const main = async (input: Input) => {
-  const { dataDir, startDate, endDate } = input;
-
-  await prepareDirectory(dataDir);
+  const { startDate, endDate } = input;
 
   await fetchSummary(input);
 
   const total = MyDateMod.diffDay(startDate, endDate);
   for (
-    let cursorDate = startDate, step = 1;
-    cursorDate <= endDate;
-    cursorDate = MyDateMod.addDay(cursorDate, 1), step++
+    let cursorDate = endDate, step = 1;
+    cursorDate >= startDate;
+    cursorDate = MyDateMod.addDay(cursorDate, -1), step++
   ) {
     const label = `stock ${step}/${total}`;
-    await fetchDate(input, cursorDate, label);
+    const count = await fetchDate(input, cursorDate, label);
+    if (count > 0) {
+      break;
+    }
   }
 };
 
@@ -90,28 +78,27 @@ const fetchSummary = async (input: Input) => {
   await writeCSV(fp, text);
 };
 
-const fetchDate = async (input: Input, date: MyDate, label: string) => {
+const fetchDate = async (
+  input: Input,
+  date: MyDate,
+  label: string,
+): Promise<number> => {
   const { dataDir, overwrite } = input;
 
   // 주말은 KRX 안열리니까 무시. 공휴일을 알아낼 방법이 마땅히 없어서 공휴일은 그냥 요청한다
   if (MyDateMod.isWeekendInKST(date)) {
     logger.info(`${label}: date=${date} weekend`);
-    return;
+    return 0;
   }
 
-  const filename = createDateFileName(date);
-
-  const parsed = MyDateMod.split(date);
-  const year: MyYear = parsed[0];
-
-  const fp = path.resolve(dataDir, "전종목", year, filename);
+  const fp = path.resolve(dataDir, "전종목_시세.csv");
 
   try {
     if (!overwrite) {
       const _stat = await fs.stat(fp);
       logger.info(`${label}: date=${date} exists`);
       // 있으면 스킵. 데이터 갱신이 필요할 수 있음
-      return;
+      return 0;
     }
   } catch (_e) {
     //
@@ -124,13 +111,13 @@ const fetchDate = async (input: Input, date: MyDate, label: string) => {
   // 미래. 예외상황 대응용
   if (list.length === 0) {
     logger.info(`${label}: date=${date} count=0`);
-    return;
+    return 0;
   }
 
   // 공휴일이나 장이 열리지 않은 날은 레코드는 있지만 데이터가 전부 "-"
   if (Number.isNaN(list[0]?.시가)) {
     logger.info(`${label}: date=${date} count=${list.length} ignore`);
-    return;
+    return 0;
   }
 
   // 전종목 데이터 저장
@@ -142,4 +129,6 @@ const fetchDate = async (input: Input, date: MyDate, label: string) => {
   const text = stringifyCSV(rows);
   await writeCSV(fp, text);
   logger.info(`${label}: date=${date} count=${list.length} save`);
+
+  return list.length;
 };
