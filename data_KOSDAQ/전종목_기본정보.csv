@@ -49,6 +49,7 @@ KR7318060001,318060,그래피,그래피,Graphy Inc.,2025-08-25,KOSDAQ,주권,기
 HK0000307485,900290,그레이트리치과기유한공사,GRT,Great Rich Technologies Limited,2016-10-25,KOSDAQ,외국주권,외국기업(소속부없음),보통주,
 KR7453450009,453450,그리드위즈,그리드위즈,"Gridwiz Co.,Ltd",2024-06-14,KOSDAQ,주권,벤처기업부,보통주,200
 KR7204020002,204020,그리티,그리티,"GRITEE, Inc.",2018-07-23,KOSDAQ,주권,우량기업부,보통주,500
+KR70015G0009,0015G0,그린광학,그린광학,"Green Optics Co.,Ltd.",2025-11-17,KOSDAQ,주권,기술성장기업부,보통주,500
 KR7402490007,402490,그린리소스,그린리소스,"Green Resource Co.,Ltd",2023-11-24,KOSDAQ,주권,기술성장기업부,보통주,500
 KR7114450000,114450,그린생명과학,그린생명과학,GREEN LIFESCIENCE,2009-12-22,KOSDAQ,주권,중견기업부,보통주,500
 KR7186230009,186230,그린플러스,그린플러스,"GREEN PLUS Co., Ltd",2019-08-07,KOSDAQ,주권,벤처기업부,보통주,500
@@ -156,7 +157,7 @@ KR7065150005,065150,대산에프앤비,대산F&B,Daesan F&B Inc.,2007-07-18,KOSD
 KR7036480002,036480,대성미생물연구소,대성미생물,"Daesung Microbiological Labs. Co., Ltd.",2000-04-04,KOSDAQ,주권,중견기업부,보통주,500
 KR7027830009,027830,대성창업투자,대성창투,"Daesung Private Equity, Inc.",1999-11-30,KOSDAQ,주권,벤처기업부,보통주,500
 KR7104040001,104040,대성파인텍,대성파인텍,"Daesung Fine Tech. Co., Ltd",2009-01-23,KOSDAQ,주권,벤처기업부,보통주,100
-KR7129920005,129920,대성하이텍,대성하이텍,"Daesung Hi-Tech Co., Ltd.",2022-08-22,KOSDAQ,주권,벤처기업부,보통주,100
+KR7129920005,129920,대성하이텍,대성하이텍,"Daesung Hi-Tech Co., Ltd.",2022-08-22,KOSDAQ,주권,중견기업부,보통주,100
 KR7457630002,457630,대신밸런스제16호기업인수목적,대신밸런스제16호스팩,Daishin Balance No.16 Special Purpose Acquisition Company,2023-09-04,KOSDAQ,주권,SPAC(소속부없음),보통주,100
 KR7471050005,471050,대신밸런스제17호기업인수목적,대신밸런스제17호스팩,Daishin Balance No.17 Special Purpose Acquisition Company,2024-01-24,KOSDAQ,주권,SPAC(소속부없음),보통주,100
 KR7478780000,478780,대신밸런스제18호기업인수목적,대신밸런스제18호스팩,Daishin Balance No.18 Special Purpose Acquisition Company,2024-08-22,KOSDAQ,주권,SPAC(소속부없음),보통주,100
@@ -714,7 +715,6 @@ KR7332370006,332370,아이디피,아이디피,"IDP Corp., Ltd.",2020-08-24,KOSDA
 KR7066430000,066430,아이로보틱스,아이로보틱스,I-ROBOTICS,2002-12-24,KOSDAQ,주권,중견기업부,보통주,500
 KR7339950008,339950,아이비김영,아이비김영,"IBKIMYOUNG CO.,LTD.",2019-12-24,KOSDAQ,주권,중견기업부,보통주,100
 KR7469750004,469750,아이비젼웍스,아이비젼웍스,"IVISIONWORKS CO.,LTD.",2024-09-03,KOSDAQ,주권,벤처기업부,보통주,100
-KR7442770004,442770,아이비케이에스제21호기업인수목적,IBKS제21호스팩,IBKS No.21 Special Purpose Acquisition Company,2022-12-16,KOSDAQ,주권,SPAC(소속부없음),보통주,100
 KR7448760009,448760,아이비케이에스제22호기업인수목적,IBKS제22호스팩,IBKS No.22 Special Purpose Acquisition Company,2023-04-06,KOSDAQ,주권,SPAC(소속부없음),보통주,100
 KR7467930004,467930,아이비케이에스제23호기업인수목적,IBKS제23호스팩,IBKS No.23 Special Purpose Acquisition Company,2023-12-22,KOSDAQ,주권,SPAC(소속부없음),보통주,100
 KR7469480008,469480,아이비케이에스제24호기업인수목적,IBKS제24호스팩,IBKS No.24 Special Purpose Acquisition Company,2024-02-01,KOSDAQ,주권,SPAC(소속부없음),보통주,100
@@ -780,6 +780,7 @@ KR7148250004,148250,알엔투테크놀로지,알엔투테크놀로지,"RN2 Techn
 KR7347860009,347860,알체라,알체라,Alchera Inc.,2020-12-21,KOSDAQ,주권,벤처기업부,보통주,500
 KR7196170005,196170,알테오젠,알테오젠,Alteogen Inc.,2014-12-12,KOSDAQ GLOBAL,주권,우량기업부,보통주,500
 KR7123750002,123750,알톤,알톤,Alton,2010-07-02,KOSDAQ,주권,중견기업부,보통주,500
+KR7459550000,459550,알트,알트,"ALT Co., Ltd.",2025-11-17,KOSDAQ,주권,중견기업부,보통주,100
 KR7085810000,085810,알티캐스트,알티캐스트,Alticast Corporation,2013-12-06,KOSDAQ,주권,중견기업부,보통주,500
 KR7043100007,043100,알파녹스,알파녹스,Alphanox,2000-08-08,KOSDAQ,주권,벤처기업부,보통주,500
 KR7117670000,117670,알파칩스,알파칩스,Alphachips,2010-09-17,KOSDAQ,주권,관리종목(소속부없음),보통주,500
