@@ -18,8 +18,8 @@ export const App = () => {
       <button type="button" onClick={() => setMenu("kofia")}>
         kofia
       </button>
-      {menu === "kofia" ? <KofiaPage /> : <EtfPage />}
-      {menu === "etf" ? <EtfPage /> : <KofiaPage />}
+      {menu === "kofia" ? <KofiaPage /> : null}
+      {menu === "etf" ? <EtfPage /> : null}
     </>
   );
 };
