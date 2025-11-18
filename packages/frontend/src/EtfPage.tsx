@@ -1,23 +1,29 @@
-import { compareItems, rankItem } from "@tanstack/match-sorter-utils";
+import { compareItems, rankItem, type RankingInfo } from "@tanstack/match-sorter-utils";
 import {
   type ColumnDef,
   type ColumnFiltersState,
   type FilterFn,
   flexRender,
   getCoreRowModel,
+  getFilteredRowModel,
   getSortedRowModel,
   type SortingFn,
   type SortingState,
   sortingFns,
   useReactTable,
-  getFilteredRowModel,
 } from "@tanstack/react-table";
 import { useVirtualizer } from "@tanstack/react-virtual";
 import React, { useMemo, useRef, useState } from "react";
 import useSWRImmutable from "swr/immutable";
 import z from "zod";
-import { DebouncedInput, Filter } from "./components";
+import { Filter } from "./components";
 import { EtfDisplayUrls, EtfSheetUrls, fetcher } from "./urls";
+
+declare module "@tanstack/react-table" {
+  interface FilterMeta {
+    itemRank: RankingInfo;
+  }
+}
 
 // Define a custom fuzzy filter function that will apply ranking info to rows (using match-sorter utils)
 const fuzzyFilter: FilterFn<any> = (row, columnId, value, addMeta) => {
