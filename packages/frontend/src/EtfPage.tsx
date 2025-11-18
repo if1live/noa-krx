@@ -1,16 +1,55 @@
+import { compareItems, rankItem } from "@tanstack/match-sorter-utils";
 import {
   type ColumnDef,
+  type ColumnFiltersState,
+  type FilterFn,
   flexRender,
   getCoreRowModel,
   getSortedRowModel,
+  type SortingFn,
   type SortingState,
+  sortingFns,
   useReactTable,
+  getFilteredRowModel,
 } from "@tanstack/react-table";
 import { useVirtualizer } from "@tanstack/react-virtual";
-import { useMemo, useRef, useState } from "react";
+import React, { useMemo, useRef, useState } from "react";
 import useSWRImmutable from "swr/immutable";
 import z from "zod";
+import { DebouncedInput, Filter } from "./components";
 import { EtfDisplayUrls, EtfSheetUrls, fetcher } from "./urls";
+
+// Define a custom fuzzy filter function that will apply ranking info to rows (using match-sorter utils)
+const fuzzyFilter: FilterFn<any> = (row, columnId, value, addMeta) => {
+  // Rank the item
+  const itemRank = rankItem(row.getValue(columnId), value);
+
+  // Store the itemRank info
+  addMeta({
+    itemRank,
+  });
+
+  // Return if the item should be filtered in/out
+  return itemRank.passed;
+};
+
+// Define a custom fuzzy sort function that will sort by rank if the row has ranking information
+const fuzzySort: SortingFn<any> = (rowA, rowB, columnId) => {
+  let dir = 0;
+
+  // Only sort by rank if the column has ranking information
+  if (rowA.columnFiltersMeta[columnId]) {
+    dir = compareItems(
+      // biome-ignore lint/style/noNonNullAssertion: TODO
+      rowA.columnFiltersMeta[columnId]?.itemRank!,
+      // biome-ignore lint/style/noNonNullAssertion: TODO
+      rowB.columnFiltersMeta[columnId]?.itemRank!,
+    );
+  }
+
+  // Provide an alphanumeric fallback for when the item ranks are equal
+  return dir === 0 ? sortingFns.alphanumeric(rowA, rowB, columnId) : dir;
+};
 
 const Row = z.object({
   단축코드: z.string(),
@@ -73,6 +112,11 @@ export const EtfPage = () => {
 };
 
 const LocalTable = (props: { rows: Row[] }) => {
+  const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
+    [],
+  );
+  const [globalFilter, setGlobalFilter] = React.useState("");
+
   const [sorting, setSorting] = useState<SortingState>([]);
 
   const columns = useMemo<Array<ColumnDef<Row>>>(
@@ -105,6 +149,7 @@ const LocalTable = (props: { rows: Row[] }) => {
             </a>
           );
         },
+        sortingFn: fuzzySort,
       },
       {
         accessorKey: "실부담비용률",
@@ -147,11 +192,19 @@ const LocalTable = (props: { rows: Row[] }) => {
   const table = useReactTable({
     data,
     columns,
+    filterFns: {
+      fuzzy: fuzzyFilter,
+    },
     state: {
       sorting,
+      columnFilters,
+      globalFilter,
     },
     onSortingChange: setSorting,
+    onColumnFiltersChange: setColumnFilters,
+    onGlobalFilterChange: setGlobalFilter,
     getCoreRowModel: getCoreRowModel(),
+    getFilteredRowModel: getFilteredRowModel(),
     getSortedRowModel: getSortedRowModel(),
     debugTable: true,
   });
@@ -198,6 +251,11 @@ const LocalTable = (props: { rows: Row[] }) => {
                             asc: " 🔼",
                             desc: " 🔽",
                           }[header.column.getIsSorted() as string] ?? null}
+                          {header.column.getCanFilter() ? (
+                            <div>
+                              <Filter column={header.column} />
+                            </div>
+                          ) : null}
                         </div>
                       )}
                     </th>
