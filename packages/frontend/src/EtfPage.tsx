@@ -80,19 +80,37 @@ const LocalTable = (props: { rows: Row[] }) => {
       {
         accessorKey: "단축코드",
         size: 80,
+        cell: (info) => {
+          const code = info.getValue<string>();
+          const url = `https://finance.naver.com/item/main.naver?code=${code}`;
+          // const ticker = `${code}.KS`;
+          // const url = `https://finance.yahoo.com/quote/${ticker}/`;
+          return (
+            <a href={url} target="_blank" rel="noopener noreferrer">
+              {code}
+            </a>
+          );
+        },
       },
       {
         accessorKey: "한글종목약명",
         size: 350,
-      },
-      {
-        accessorKey: "기초지수명",
-        size: 600,
+        cell: (info) => {
+          const name = info.getValue<string>();
+          const code = info.row.original.펀드코드;
+          const url = `https://dis.kofia.or.kr/websquare/popup.html?w2xPath=/wq/com/popup/DISComFundSmryInfo.xml&standardCd=${code}`;
+          return (
+            <a href={url} target="_blank" rel="noopener noreferrer">
+              {name}
+            </a>
+          );
+        },
       },
       {
         accessorKey: "실부담비용률",
         cell: (info) => info.getValue<number>().toFixed(4),
       },
+      /*
       {
         accessorKey: "과세유형",
         cell: (info) => {
@@ -112,6 +130,11 @@ const LocalTable = (props: { rows: Row[] }) => {
               return text;
           }
         },
+      },
+      */
+      {
+        accessorKey: "기초지수명",
+        size: 600,
       },
       { accessorKey: "기초시장분류" },
       { accessorKey: "기초자산분류" },
