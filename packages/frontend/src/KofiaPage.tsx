@@ -105,7 +105,7 @@ const KofiaTable = (props: { rows: Row[] }) => {
           const url = `https://dis.kofia.or.kr/websquare/popup.html?w2xPath=/wq/com/popup/DISComFundSmryInfo.xml&standardCd=${code}`;
           return (
             <a href={url} target="_blank">
-              {info.getValue<Date>().toLocaleString()}
+              {info.getValue<string>().toLocaleString()}
             </a>
           );
         },
