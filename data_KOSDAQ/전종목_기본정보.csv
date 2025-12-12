@@ -36,6 +36,7 @@ KR7465320000,465320,교보15호기업인수목적,교보15호스팩,Kyobo 15 Spe
 KR7482520004,482520,교보16호기업인수목적,교보16호스팩,Kyobo 16 Special Purpose Acquisition Company,2024-08-13,KOSDAQ,주권,SPAC(소속부없음),보통주,100
 KR7489210005,489210,교보17호기업인수목적,교보17호스팩,Kyobo 17 Special Purpose Acquisition Company,2024-11-21,KOSDAQ,주권,SPAC(소속부없음),보통주,100
 KR70041B0002,0041B0,교보18호기업인수목적,교보18호스팩,Kyobo 18 Special Purpose Acquisition Company,2025-08-14,KOSDAQ,주권,SPAC(소속부없음),보통주,100
+KR70098T0004,0098T0,교보19호기업인수목적,교보19호스팩,Kyobo 19 Special Purpose Acquisition Company,2025-12-12,KOSDAQ,주권,SPAC(소속부없음),보통주,100
 KR7053270005,053270,구영테크,구영테크,GUYOUNG TECHNOLOGY,2002-02-07,KOSDAQ,주권,우량기업부,보통주,500
 KR7066620006,066620,국보디자인,국보디자인,KUKBO DESIGN,2002-09-05,KOSDAQ,주권,우량기업부,보통주,500
 KR7043650001,043650,국순당,국순당,"KOOK SOON DANG CO., LTD.",2000-08-24,KOSDAQ,주권,중견기업부,보통주,500
@@ -89,7 +90,7 @@ KR7253590004,253590,네오셈,네오셈,Neosem Inc.,2018-04-04,KOSDAQ,주권,우
 KR7212560007,212560,네오오토,네오오토,"NEOOTO Co., Ltd.",2015-11-18,KOSDAQ,주권,우량기업부,보통주,500
 KR7095660007,095660,네오위즈,네오위즈,NEOWIZ,2007-07-02,KOSDAQ,주권,우량기업부,보통주,500
 KR7042420000,042420,네오위즈홀딩스,네오위즈홀딩스,NEOWIZ HOLDINDS Corporation,2000-06-27,KOSDAQ,주권,중견기업부,보통주,500
-KR8840140006,950220,네오이뮨텍,네오이뮨텍,"NeoImmuneTech, Inc.",2021-03-16,KOSDAQ,주식예탁증권,외국기업(소속부없음),보통주,0
+KR8840140006,950220,네오이뮨텍,네오이뮨텍,"NeoImmuneTech, Inc.",2021-03-16,KOSDAQ,주식예탁증권,기술성장기업부,보통주,0
 KR7311390009,311390,네오크레마,네오크레마,"Neo Cremar Co., Ltd.",2019-08-22,KOSDAQ,주권,벤처기업부,보통주,500
 KR7085910008,085910,네오티스,네오티스,"NEO TECHNICAL SYSTEM CO., LTD",2007-10-01,KOSDAQ,주권,중견기업부,보통주,500
 KR7092730001,092730,네오팜,네오팜,"Neopharm CO., LTD.",2007-01-30,KOSDAQ,주권,우량기업부,보통주,500
@@ -1495,6 +1496,7 @@ KR7052330008,052330,코텍,코텍,KORTEK CORPORATION,2001-07-10,KOSDAQ,주권,�
 KR7322780008,322780,코퍼스코리아,코퍼스코리아,"COPUS KOREA Co., Ltd.",2019-05-31,KOSDAQ,주권,중견기업부,보통주,100
 KR7200130003,200130,콜마비앤에이치,콜마비앤에이치,"KolmarBNH Co., Ltd",2014-07-23,KOSDAQ GLOBAL,주권,우량기업부,보통주,500
 KR7294570007,294570,쿠콘,쿠콘,coocon Corporation,2021-04-28,KOSDAQ,주권,우량기업부,보통주,500
+KR7464490002,464490,쿼드메디슨,쿼드메디슨,QuadMedicine Inc.,2025-12-12,KOSDAQ,주권,기술성장기업부,보통주,500
 KR7317690006,317690,퀀타매트릭스,퀀타매트릭스,QuantaMatrix Incorporated,2020-12-09,KOSDAQ,주권,기술성장기업부,보통주,500
 KR7227100005,227100,퀀텀온,퀀텀온,Quantumon,2018-11-15,KOSDAQ,주권,관리종목(소속부없음),보통주,500
 KR7432720001,432720,퀄리타스반도체,퀄리타스반도체,"QUALITAS SEMICONDUCTOR CO., LTD.",2023-10-27,KOSDAQ,주권,기술성장기업부,보통주,500
@@ -1521,6 +1523,7 @@ KR7139670004,139670,키네마스터,키네마스터,KineMaster Corporation,2011-
 KR7475430005,475430,키스트론,키스트론,"KISTRON Co., Ltd.",2025-06-02,KOSDAQ,주권,중견기업부,보통주,500
 KR7487720005,487720,키움제10호기업인수목적,키움제10호스팩,Kiwoom No.10 Special Purpose Acquisition Company,2024-12-20,KOSDAQ,주권,SPAC(소속부없음),보통주,100
 KR7489480004,489480,키움제11호기업인수목적,키움제11호스팩,Kiwoom No.11 Special Purpose Acquisition Company,2024-12-11,KOSDAQ,주권,SPAC(소속부없음),보통주,100
+KR7466690005,466690,키움히어로제1호기업인수목적,키움히어로제1호스팩,Kiwoom Hero No.1 Special Purpose Acquisition Company,2025-12-12,KOSDAQ,주권,SPAC(소속부없음),보통주,100
 KR7054780002,054780,키이스트,키이스트,"KEYEAST Co., Ltd.",2003-11-14,KOSDAQ,주권,중견기업부,보통주,500
 KR7256940008,256940,킵스바이오파마,킵스파마,Keeps Biopharma,2017-09-06,KOSDAQ,주권,벤처기업부,보통주,500
 KR7219130002,219130,타이거일렉,타이거일렉,"TigerElec Co.,Ltd.",2015-09-25,KOSDAQ,주권,중견기업부,보통주,500
@@ -1534,7 +1537,7 @@ KR7053620001,053620,태양,태양,TAEYANG Corporation,2001-08-07,KOSDAQ,주권,�
 KR7044490001,044490,태웅,태웅,"TAEWOONG CO., LTD.",2001-11-08,KOSDAQ,주권,우량기업부,보통주,500
 KR7124560004,124560,태웅로직스,태웅로직스,"Taewoong Logistics Co., Ltd.",2019-12-10,KOSDAQ,주권,우량기업부,보통주,100
 KR7191420009,191420,테고사이언스,테고사이언스,"Tego Science, Inc.",2014-11-06,KOSDAQ,주권,벤처기업부,보통주,500
-KR8826050005,950250,테라뷰홀딩스,테라뷰,TERAVIEW HOLDINGS PLC,2025-12-09,KOSDAQ,주식예탁증권,외국기업(소속부없음),보통주,0
+KR8826050005,950250,테라뷰홀딩스,테라뷰,TERAVIEW HOLDINGS PLC,2025-12-09,KOSDAQ,주식예탁증권,기술성장기업부,보통주,0
 KR7073640005,073640,테라사이언스,테라사이언스,"TERA SCIENCE Co.,LTD",2004-01-06,KOSDAQ,주권,관리종목(소속부없음),보통주,100
 KR7066700006,066700,테라젠이텍스,테라젠이텍스,"THERAGEN ETEX CO.,LTD.",2004-05-27,KOSDAQ,주권,벤처기업부,보통주,500
 KR7095610002,095610,테스,테스,"TES CO., LTD.",2008-05-20,KOSDAQ,주권,우량기업부,보통주,500
