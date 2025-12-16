@@ -12,6 +12,7 @@ KR70001P0004,0001P0,DB 마이티 바이오시밀러&CDMO액티브증권상장지
 KR7159800002,159800,DB마이티K100증권상장지수투자신탁(주식),마이티 코스피100,DB Mighty K100 ETF,2012-07-05,코스피 100,KRX,일반,실물(패시브),국내,주식,디비자산운용,40000,0.375,비과세
 KR7472840008,472840,IBK ITF 200증권상장지수투자신탁[주식],ITF 200,IBK ITF KS200 ETF,2023-12-21,코스피 200,KRX,일반,실물(패시브),국내,주식,아이비케이자산운용,25000,0.08,비과세
 KR70005G0001,0005G0,IBK ITF K-AI반도체 코어테크 증권상장지수투자신탁[주식],ITF K-AI반도체코어테크,IBK ITF K-AI Semiconductor Core Technology ETF,2025-01-21,FnGuide K-AI반도체 코어테크 지수,FnGuide,일반,실물(패시브),국내,주식,아이비케이자산운용,50000,0.28,비과세
+KR70135Y0002,0135Y0,IBK ITF 중기종합채권(AA-이상)액티브증권상장지수투자신탁[채권],ITF 중기종합채권(AA-이상)액티브,IBK ITF Mid-Term Bond(AA- above)Active ETF,2025-12-16,"KIS 중기종합채권 (1~5Y, AA-이상, 총수익)",KIS자산평가,일반,실물(액티브),국내,채권,아이비케이자산운용,1000,0.041,배당소득세(보유기간과세)
 KR7361580004,361580,KB RISE 200 Total Return증권상장지수투자신탁(주식),RISE 200TR,KB RISE 200 Total Return ETF,2020-08-21,코스피 200 TR,KRX,일반,실물(패시브),국내,주식,케이비자산운용,50000,0.012,배당소득세(보유기간과세)
 KR7290080001,290080,KB RISE 200고배당커버드콜ATM증권상장지수투자신탁(주식-파생형),RISE 200고배당커버드콜ATM,KB RISE 200 High Dividend Covered Call ATM ETF,2018-02-27,코스피 200 고배당커버드콜 ATM 지수(시장가격지수),KRX,일반,실물(패시브),국내,주식,케이비자산운용,50000,0.4,배당소득세(보유기간과세)
 KR7284980000,284980,KB RISE 200금융증권상장지수투자신탁(주식),RISE 200금융,KB RISE 200 Financials ETF,2017-12-08,코스피 200 금융,KRX,일반,실물(패시브),국내,주식,케이비자산운용,20000,0.19,비과세
@@ -74,6 +75,7 @@ KR7385550009,385550,KB RISE 단기채권알파액티브증권상장지수투자�
 KR7196230007,196230,KB RISE 단기통안채증권상장지수투자신탁(채권),RISE 단기통안채,KB RISE Short-Term MSB ETF,2014-05-19,KIS 통안채 5개월 지수(총수익),KIS자산평가,일반,실물(패시브),국내,채권,케이비자산운용,1000,0.13,배당소득세(보유기간과세)
 KR70061Z0009,0061Z0,KB RISE 단기특수은행채액티브증권상장지수투자신탁(채권),RISE 단기특수은행채액티브,KB RISE Short Term Specialized Bank Bond Active ETF,2025-06-24,KAP 단기 특수은행채 지수(시장가격),한국자산평가(KAP),일반,실물(액티브),국내,채권,케이비자산운용,2000,0.01,배당소득세(보유기간과세)
 KR7315960005,315960,KB RISE 대형고배당10Total Return증권상장지수투자신탁(주식),RISE 대형고배당10TR,KB RISE Large Cap High Dividend10TR ETF,2019-01-22,WISE 대형고배당10 TR 지수,WiseFn,일반,실물(패시브),국내,주식,케이비자산운용,50000,0.07,배당소득세(보유기간과세)
+KR70138D0004,0138D0,KB RISE 동학개미증권상장지수투자신탁(주식),RISE 동학개미,KB RISE Investor's Choice KR ETF,2025-12-16,FnGuide 동학개미 지수,FnGuide,일반,실물(패시브),국내,주식,케이비자산운용,50000,0.07,비과세
 KR7455890004,455890,KB RISE 머니마켓액티브증권상장지수투자신탁(채권),RISE 머니마켓액티브,KB RISE Money Market Active ETF,2023-05-09,KIS 시가평가 MMF 지수 (총수익지수),KIS자산평가,일반,실물(액티브),국내,채권,케이비자산운용,2000,0.05,배당소득세(보유기간과세)
 KR7481340008,481340,KB RISE 미국30년국채액티브증권상장지수투자신탁(채권),RISE 미국30년국채액티브,KB RISE US Treasury Bond 30Y Active ETF,2024-05-28,Bloomberg U.S Treasury 20+ Year Total Return Index,Bloomberg,일반,실물(액티브),해외,채권,케이비자산운용,50000,0.05,배당소득세(보유기간과세)
 KR7472870005,472870,KB RISE 미국30년국채엔화노출증권상장지수투자신탁(채권-파생형)(합성 H),RISE 미국30년국채엔화노출(합성 H),KB RISE 30Y US Treasury Bond(JPY) ETF(SYNTH H),2023-12-27,KIS 미국채30년 엔화노출 지수(USD/JPY 헤지)(총수익지수),KIS자산평가,일반,합성(패시브),해외,채권,케이비자산운용,50000,0.15,배당소득세(보유기간과세)
@@ -148,6 +150,7 @@ KR7332930007,332930,NH-Amundi HANARO 200 Total Return증권상장지수투자신
 KR7304780000,304780,NH-Amundi HANARO 200선물레버리지증권상장지수투자신탁[주식-파생형],HANARO 200선물레버리지,NH-Amundi HANARO 200 Futures Leverage ETF,2018-08-14,코스피 200 선물지수,KRX,2X 레버리지,실물(패시브),국내,주식,엔에이치아문디자산운용,50000,0.45,배당소득세(보유기간과세)
 KR7306520008,306520,NH-Amundi HANARO 200선물인버스증권상장지수투자신탁(주식-파생형),HANARO 200선물인버스,NH-Amundi HANARO 200 Futures Inverse ETF,2018-09-18,코스피 200 선물지수,KRX,1X 인버스,실물(패시브),국내,주식,엔에이치아문디자산운용,50000,0.45,배당소득세(보유기간과세)
 KR7293180006,293180,NH-Amundi HANARO 200증권상장지수투자신탁[주식],HANARO 200,NH-Amundi HANARO 200 ETF,2018-03-30,코스피 200,KRX,일반,실물(패시브),국내,주식,엔에이치아문디자산운용,50000,0.036,비과세
+KR70123S0004,0123S0,NH-Amundi HANARO 26-12 은행채(AA+이상)액티브증권상장지수투자신탁(채권),HANARO 26-12 은행채(AA+이상)액티브,NH-Amundi HANARO 26-12 Bank Bond (AA plus or higher) Active ETF,2025-12-16,KIS 은행채2612만기형 지수,KIS자산평가,일반,실물(액티브),국내,채권,엔에이치아문디자산운용,10000,0.02,배당소득세(보유기간과세)
 KR70091M0008,0091M0,NH-Amundi HANARO 27-06 회사채(AA-이상)액티브증권상장지수투자신탁(채권),HANARO 27-06 회사채(AA-이상)액티브,NH-Amundi HANARO 27-06 Corporate Bond (AA- or higher) Active ETF,2025-08-26,KIS 회사채(AA-이상)2706만기형지수(총수익),KIS자산평가,일반,실물(액티브),국내,채권,엔에이치아문디자산운용,10000,0.02,배당소득세(보유기간과세)
 KR7448490003,448490,NH-Amundi HANARO 32-10 국고채액티브증권상장지수투자신탁(채권),HANARO 32-10 국고채액티브,NH-Amundi HANARO Oct 2032 Treasury ETF,2022-11-22,KAP 32-10 국고채 10년 총수익지수,한국자산평가(KAP),일반,실물(액티브),국내,채권,엔에이치아문디자산운용,2000,0.05,배당소득세(보유기간과세)
 KR7454320003,454320,NH-Amundi HANARO CAPEX설비투자iSelect증권상장지수투자신탁(주식),HANARO CAPEX설비투자iSelect,NH-Amundi HANARO CAPEX ETF,2023-04-18,iSelect CAPEX 설비투자 지수(시장가격),NH투자증권,일반,실물(패시브),국내,주식,엔에이치아문디자산운용,50000,0.45,비과세
@@ -714,6 +717,8 @@ KR7464600006,464600,신한 SOL 자동차소부장Fn증권상장지수투자신�
 KR70005D0004,0005D0,신한 SOL 전고체배터리&실리콘음극재증권상장지수투자신탁[주식],SOL 전고체배터리&실리콘음극재,Shinhan SOL All Solid State Battery & Silicon Anode ETF,2025-01-07,FnGuide 전고체배터리&실리콘음극재 지수(PR),FnGuide,일반,실물(패시브),국내,주식,신한자산운용,50000,0.45,비과세
 KR70080Y0007,0080Y0,신한 SOL 조선TOP3플러스레버리지증권상장지수투자신탁[주식-파생형],SOL 조선TOP3플러스레버리지,Shinhan SOL Shipbuilding TOP3 Plus leverage ETF,2025-07-15,FnGuide 조선TOP3플러스지수(PR),FnGuide,2X 레버리지,실물(패시브),국내,주식,신한자산운용,100000,0.5,배당소득세(보유기간과세)
 KR7466920006,466920,신한 SOL 조선TOP3플러스증권상장지수투자신탁[주식],SOL 조선TOP3플러스,Shinhan SOL Shipbuilding TOP3 Plus ETF,2023-10-05,FnGuide 조선TOP3플러스지수(PR),FnGuide,일반,실물(패시브),국내,주식,신한자산운용,50000,0.45,비과세
+KR70141S0002,0141S0,신한 SOL 조선기자재증권상장지수투자신탁[주식],SOL 조선기자재,Shinhan SOL Shipbuilding Equipment ETF,2025-12-16,FnGuide 조선기자재 지수(PR),FnGuide,일반,실물(패시브),국내,주식,신한자산운용,50000,0.45,비과세
+KR70141T0001,0141T0,신한 SOL 중기종합채권(AA-이상)액티브증권상장지수투자신탁[채권],SOL 중기종합채권(AA-이상)액티브,Shinhan SOL Mid Term Total Bond Active(AA- Higher) ETF,2025-12-16,"KAP K-중기종합채권지수(AA-이상,총수익)",한국자산평가(KAP),일반,실물(액티브),국내,채권,신한자산운용,2000,0.05,배당소득세(보유기간과세)
 KR70016X0007,0016X0,신한 SOL 중단기회사채(A-이상)액티브증권상장지수투자신탁[채권],SOL 중단기회사채(A-이상)액티브,Shinhan SOL Mid-Short Term Credit Bond(A- or higher) Active ETF,2025-02-18,KIS 중단기크레딧플러스채권(AA+~A-)지수(총수익),KIS자산평가,일반,실물(액티브),국내,채권,신한자산운용,2000,0.05,배당소득세(보유기간과세)
 KR7220130009,220130,신한 SOL 차이나강소기업CSI500증권상장지수투자신탁(주식-파생형)(합성 H),SOL 차이나강소기업CSI500(합성 H),Shinhan SOL Synth-China Mainland Small & Mid Cap CSI500 ETF(H),2015-06-08,CSI 500 지수,CSI,일반,합성(패시브),해외,주식,신한자산운용,100000,0.6,배당소득세(보유기간과세)
 KR70131A0004,0131A0,신한 SOL 차이나소비트렌드증권상장지수투자신탁[주식],SOL 차이나소비트렌드,Shinhan SOL China Consumer Trend ETF,2025-11-25,SOLACTIVE-KEDI CHINA CONSUMER TREND INDEX(PR),Solactive,일반,실물(패시브),해외,주식,신한자산운용,50000,0.45,배당소득세(보유기간과세)
@@ -882,6 +887,7 @@ KR7256440009,256440,한국투자 ACE MSCI인도네시아증권상장지수투자
 KR7261920003,261920,한국투자 ACE MSCI필리핀증권상장지수투자신탁(주식-파생형)(합성),ACE MSCI필리핀(합성),KIM ACE MSCI Philippines ETF(Synth),2016-12-28,MSCI Philippines IMI Index,MSCI,일반,합성(패시브),해외,주식,한국투자신탁운용,100000,0.5,배당소득세(보유기간과세)
 KR70021D0004,0021D0,한국투자 ACE TDF2030액티브증권상장지수투자신탁(혼합-재간접형),ACE TDF2030액티브,KIM ACE TDF2030 Active ETF,2025-03-11,Bloomberg Multi Asset Target-date 2030 KRW Index,Bloomberg,일반,실물(액티브),국내&해외,혼합자산,한국투자신탁운용,50000,0.3,배당소득세(보유기간과세)
 KR70021E0003,0021E0,한국투자 ACE TDF2050액티브증권상장지수투자신탁(혼합-재간접형),ACE TDF2050액티브,KIM ACE TDF2050 Active ETF,2025-03-11,Bloomberg Multi Asset Target-date 2050 KRW Index,Bloomberg,일반,실물(액티브),국내&해외,혼합자산,한국투자신탁운용,50000,0.35,배당소득세(보유기간과세)
+KR70139P0009,0139P0,한국투자 ACE 고배당주증권상장지수투자신탁(주식),ACE 고배당주,KIM ACE High Dividend ETF,2025-12-16,KRX-Akros 고배당주 20 지수,KRX,일반,실물(패시브),국내,주식,한국투자신탁운용,50000,0.15,비과세
 KR7225130004,225130,한국투자 ACE 골드선물레버리지특별자산상장지수투자신탁(금-파생형)(합성 H),ACE 골드선물 레버리지(합성 H),KIM ACE Synth-Gold Futures Leverage ETF(H),2015-07-28,S&P GSCI GOLD Index Excess Return,S&P,2X 레버리지,합성(패시브),해외,원자재,한국투자신탁운용,100000,0.49,배당소득세(보유기간과세)
 KR7483340006,483340,한국투자 ACE 구글밸류체인액티브증권상장지수투자신탁(주식),ACE 구글밸류체인액티브,KIM ACE Google Value Chain Active ETF,2024-06-11,KEDI 글로벌 AI 클라우드 지수,한국경제신문,일반,실물(액티브),해외,주식,한국투자신탁운용,50000,0.45,배당소득세(보유기간과세)
 KR7114460009,114460,한국투자 ACE 국고채 증권 상장지수투자신탁(채권),ACE 국고채3년,KIM ACE KOREA TB ETF,2009-07-31,KTB INDEX(시장가격),KRX,일반,실물(패시브),국내,채권,한국투자신탁운용,30000,0.15,배당소득세(보유기간과세)
@@ -998,6 +1004,7 @@ KR7419650007,419650,한화 PLUS 글로벌수소&차세대연료전지증권상�
 KR70007G0009,0007G0,한화 PLUS 글로벌원자력밸류체인증권상장지수투자신탁(주식),PLUS 글로벌원자력밸류체인,Hanwha PLUS Global Nuclear Energy Value Chain ETF,2025-01-14,Solactive Global Nuclear Energy Value Chain Index(PR),Solactive,일반,실물(패시브),해외,주식,한화자산운용,50000,0.39,배당소득세(보유기간과세)
 KR70035T0000,0035T0,한화 PLUS 글로벌휴머노이드로봇액티브증권상장지수투자신탁(주식),PLUS 글로벌휴머노이드로봇액티브,Hanwha PLUS Global Humanoid Robot Active ETF,2025-04-15,iSelect 글로벌휴머노이드로봇 (PR),NH투자증권,일반,실물(액티브),국내&해외,주식,한화자산운용,50000,0.45,배당소득세(보유기간과세)
 KR7415920008,415920,한화 PLUS 글로벌희토류&전략자원생산기업증권상장지수투자신탁(주식),PLUS 글로벌희토류&전략자원생산기업,Hanwha PLUS Global Rare Earth&Strategic Metals Company ETF,2022-01-18,MVIS Global Rare Earth/Strategic Metals Index (Price Return),MVIS,일반,실물(패시브),해외,주식,한화자산운용,50000,0.5,배당소득세(보유기간과세)
+KR70138Y0009,0138Y0,한화 PLUS 금채권혼합증권상장지수투자신탁(채권혼합-재간접형),PLUS 금채권혼합,Hanwha PLUS Gold & Treasury Balanced ETF,2025-12-16,Akros 미국 금현물 ETF 채권혼합 지수,Akros,일반,실물(패시브),국내&해외,혼합자산,한화자산운용,50000,0.15,배당소득세(보유기간과세)
 KR7278620000,278620,한화 PLUS 단기채권액티브증권상장지수투자신탁(채권),PLUS 단기채권액티브,HANWHA PLUS ACTIVE SHORT TERM CREDIT BOND ETF,2017-09-26,"KAP 투자적격 크레딧 채권 1년 지수(A- 이상,총수익)",한국자산평가(KAP),일반,실물(액티브),국내,채권,한화자산운용,1000,0.07,배당소득세(보유기간과세)
 KR7477050009,477050,한화 PLUS 머니마켓액티브증권상장지수투자신탁(채권),PLUS 머니마켓액티브,Hanwha PLUS Money Market Active ETF,2024-03-26,KAP 시가평가 MMF 지수(총수익),한국자산평가(KAP),일반,실물(액티브),국내,채권,한화자산운용,2000,0.05,배당소득세(보유기간과세)
 KR70050E0007,0050E0,한화 PLUS 미국AI에이전트증권상장지수투자신탁(주식),PLUS 미국AI에이전트,Hanwha PLUS US AI Agents ETF,2025-05-20,Solactive US AI Agents Index(PR),Solactive,일반,실물(패시브),해외,주식,한화자산운용,50000,0.45,배당소득세(보유기간과세)
